@@ -10,7 +10,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
     body {
       font-family: 'Inter', sans-serif;
@@ -26,6 +25,7 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       display: flex;
       justify-content: space-between;
+      align-items: center;
       z-index: 1000;
     }
     nav a {
@@ -41,41 +41,53 @@
       background-color: #f0f0f0;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1001;
+      border-radius: 8px;
+      padding: 0.5rem 0;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1.5rem;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
     header {
       height: 100vh;
-      background: url('your-image.jpg') no-repeat center center/cover;
+      background: url('EDC3D3CA-D66C-4070-B094-B8EBEF239D8A.png') no-repeat right center/cover;
       display: flex;
       align-items: center;
-      justify-content: left;
-      padding-left: 5%;
+      padding-left: 8%;
       color: white;
-      position: relative;
     }
-    header .intro-text {
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 2rem;
-      border-radius: 10px;
+    .intro-text {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      max-width: 500px;
+      animation: fadeInUp 1.5s ease;
     }
     header h1 {
       font-size: 3.5rem;
     }
     header h3 {
       margin-top: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: #d1d1ff;
-    }
-    .highlight {
-      font-weight: bold;
-      color: #003B73;
-    }
-    footer {
-      background-color: #f4f4f4;
-      padding: 2rem;
-      text-align: center;
-    }
-    main {
-      padding-top: 5rem;
-      text-align: center;
     }
     .btn-link {
       display: inline-block;
@@ -92,13 +104,34 @@
       background-color: #002244;
       box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
   <nav>
     <a href="/"><strong>Pranav Venkateswaran</strong></a>
     <div>
-      <a href="/about.html">About Me</a>
+      <a href="/index.html">Home</a>
+      <div class="dropdown">
+        <a href="/about.html">About</a>
+        <div class="dropdown-content">
+          <a href="/academics.html">Academics</a>
+          <a href="/accomplishments.html">Accomplishments</a>
+          <a href="/advocacy.html">Advocacy</a>
+          <a href="/athletics.html">Athletics</a>
+          <a href="/passion.html">Passion</a>
+          <a href="/work.html">Work Experience</a>
+        </div>
+      </div>
       <a href="/research.html">Research</a>
       <a href="/activities.html">Activities</a>
       <a href="/blog.html">Blog</a>
@@ -110,16 +143,8 @@
     <div class="intro-text">
       <h1>Hi, I'm Pranav.</h1>
       <h3>Researcher / Advocate / Change Maker / Innovator</h3>
-      <a class="btn-link" href="/about.html">Learn More</a>
+      <a class="btn-link" href="/about.html">Start Exploring</a>
     </div>
   </header>
-
-  <main>
-    <p>Welcome to my site. Start exploring by choosing a section above.</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Pranav Venkateswaran. Built with ❤️</p>
-  </footer>
 </body>
 </html>
