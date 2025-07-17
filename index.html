@@ -47,3 +47,122 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<!-- File: styles.css -->
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+.navbar {
+  background: #0f172a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo a {
+  color: #e0f2fe;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: #e0f2fe;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.menu a:hover {
+  color: #38bdf8;
+  text-shadow: 0 4px 8px rgba(56,189,248,0.3);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #1e293b;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li {
+  padding: 0.75rem 1rem;
+}
+
+.dropdown-content li a {
+  color: #e0f2fe;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, #1e3a8a, #0f172a);
+  color: white;
+}
+
+.hero-img {
+  width: 250px;
+  height: auto;
+  border-radius: 1rem;
+  margin-right: 2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  animation: fadeIn 1.8s ease-in-out;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0f172a;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Additional styles for blog cards, activity boxes, etc. will follow in other pages */
+
+<!-- File: script.js -->
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.fade-in').forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+      el.style.transition = 'all 1.2s ease';
+      el.style.opacity = 1;
+      el.style.transform = 'translateY(0)';
+    }, 300);
+  });
+});
