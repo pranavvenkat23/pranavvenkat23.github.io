@@ -238,3 +238,50 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.grid-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.grid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.grid-card h3 {
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.grid-card ul {
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Fade-in support */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fix dropdown hover issue */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  display: flex;
+}
