@@ -37,6 +37,8 @@ h1, h2, h3 {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .menu a {
@@ -56,38 +58,41 @@ h1, h2, h3 {
 }
 
 .dropdown-content {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background: #1e293b;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  background-color: #1e293b;
   border-radius: 0.5rem;
-  padding: 0.5rem 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   min-width: 200px;
+  padding: 0.5rem 0;
   z-index: 999;
-  display: flex;
   flex-direction: column;
-  transition: all 0.2s ease-in-out;
 }
 
 .dropdown:hover .dropdown-content,
 .dropdown-content:hover {
-  visibility: visible;
-  opacity: 1;
+  display: flex;
 }
 
 .dropdown-content li {
   list-style: none;
-  padding: 0.6rem 1.2rem;
-  text-align: left;
+  margin: 0;
+  padding: 0;
 }
 
 .dropdown-content li a {
-  color: #e0f2fe;
-  width: 100%;
   display: block;
+  padding: 0.75rem 1.2rem;
+  color: #e0f2fe;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.dropdown-content li a:hover {
+  background-color: #334155;
+  color: #ffffff;
 }
 
 /* ==== MINI HERO ==== */
@@ -172,7 +177,7 @@ h1, h2, h3 {
   border-radius: 12px;
 }
 
-/* ==== CARD SECTION ==== */
+/* ==== CARDS SECTION ==== */
 .cards-section {
   padding: 3rem 2rem;
   background: #f1f5f9;
@@ -226,7 +231,7 @@ h1, h2, h3 {
   margin-left: 2rem;
 }
 
-/* ==== GRID ACADEMICS ==== */
+/* ==== GRID ACADEMIC CARDS ==== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -257,15 +262,6 @@ h1, h2, h3 {
   padding-left: 0;
   line-height: 1.6;
   margin: 0;
-}
-
-.grid-card ul li::before {
-  content: \"•\";
-  color: #1e40af;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
 }
 
 /* ==== FOOTER ==== */
