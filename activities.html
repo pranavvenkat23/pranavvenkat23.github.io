@@ -1,18 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me – Pranav Venkateswaran</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activities – Pranav Venkateswaran</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; padding: 2rem; background: white; color: #1a1a1a; }
-    a { color: #003B73; text-decoration: none; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      padding: 6rem 2rem 2rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ffffffee;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1a1a1a;
+      margin-left: 2rem;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s ease-in-out;
+    }
+    nav a:hover {
+      background-color: #f0f0f0;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1001;
+      border-radius: 8px;
+      padding: 0.5rem 0;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1.5rem;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+    h1 {
+      font-size: 2.75rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 4px solid #003B73;
+      display: inline-block;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .activity-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+      transition: 0.3s ease;
+    }
+    .activity-card:hover {
+      background: #f0f4f8;
+      transform: translateY(-5px);
+    }
+    .activity-card h2 {
+      color: #003B73;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .activity-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
-  <h1>About Me</h1>
-  <p>Hi! I'm <strong class=\"highlight\">Pranav Venkateswaran</strong>, a student at TJHSST passionate about neuroscience, medicine, and computational biology.</p>
-  <p>Use this space to tell your story, interests, what drives you, and maybe throw in a casual photo too.</p>
+  <nav>
+    <a href="/index.html"><strong>Pranav Venkateswaran</strong></a>
+    <div>
+      <a href="/index.html">Home</a>
+      <div class="dropdown">
+        <a href="/about.html">About</a>
+        <div class="dropdown-content">
+          <a href="/academics.html">Academics</a>
+          <a href="/accomplishments.html">Accomplishments</a>
+          <a href="/advocacy.html">Advocacy</a>
+          <a href="/athletics.html">Athletics</a>
+          <a href="/passion.html">Passion</a>
+          <a href="/work.html">Work Experience</a>
+        </div>
+      </div>
+      <a href="/research.html">Research</a>
+      <a href="/activities.html">Activities</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <h1>Activities</h1>
+  <div class="grid">
+    <div class="activity-card">
+      <h2>Debate – Lincoln-Douglas</h2>
+      <p>MetroFinalist and varsity member of the LD debate team. Debate has sharpened my analytical thinking, helped me understand complex ethical issues, and empowered me to advocate confidently and clearly.</p>
+    </div>
+
+    <div class="activity-card">
+      <h2>TSA – Technology Student Association</h2>
+      <p>National Qualifier in Forensic Science. Collaborated in a high-pressure competition that simulated a real crime scene investigation. It pushed my skills in logic, precision, and quick decision-making.</p>
+    </div>
+
+    <div class="activity-card">
+      <h2>Cross Country – Varsity Runner</h2>
+      <p>Running competitively taught me discipline, mental toughness, and the importance of goal setting. It complements my academic focus with resilience and balance.</p>
+    </div>
+
+    <div class="activity-card">
+      <h2>Key Club & VHSL Volunteering</h2>
+      <p>Over 35 hours of service including cancer awareness events, school programs, and debate tournaments. These experiences taught me humility and the impact of service.</p>
+    </div>
+
+    <div class="activity-card">
+      <h2>Hospital Volunteering & Shadowing</h2>
+      <p>At Inova and a local clinic, I witnessed patient-centered care in action. These moments confirmed my passion for medicine and desire to pursue a career in healthcare and research.</p>
+    </div>
+  </div>
 </body>
 </html>
