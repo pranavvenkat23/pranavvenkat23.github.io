@@ -1,17 +1,18 @@
-// script.js
 document.addEventListener("DOMContentLoaded", function () {
-  const elements = document.querySelectorAll(".fade-in");
+  const fadeEls = document.querySelectorAll('.fade-in');
 
-  const observer = new IntersectionObserver(entries => {
+  const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // animate only once
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // animate once
       }
     });
   }, {
-    threshold: 0.15
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2 // only trigger when 20% in view
   });
 
-  elements.forEach(el => observer.observe(el));
+  fadeEls.forEach(el => observer.observe(el));
 });
