@@ -300,7 +300,7 @@ footer {
 }
 
 .dropdown:hover .dropdown-content,
-.dropdown-content:hover {
+.dropdown:focus-within .dropdown-content {
   display: flex;
   flex-direction: column;
 }
