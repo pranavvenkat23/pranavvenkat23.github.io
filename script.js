@@ -1,12 +1,17 @@
-// File: script.js
+// script.js
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('.fade-in').forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(20px)';
-    setTimeout(() => {
-      el.style.transition = 'all 1.2s ease';
-      el.style.opacity = 1;
-      el.style.transform = 'translateY(0)';
-    }, 300);
+  const elements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // animate only once
+      }
+    });
+  }, {
+    threshold: 0.15
   });
+
+  elements.forEach(el => observer.observe(el));
 });
