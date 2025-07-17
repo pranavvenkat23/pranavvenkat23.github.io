@@ -208,3 +208,16 @@ footer {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
+.improved-banner {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.07) 0%, #0a1331 90%);
+  padding: 5rem 0;
+  text-align: center;
+  box-shadow: inset 0 0 80px rgba(255,255,255,0.05);
+}
+
+.improved-banner h1 {
+  font-size: 2rem;
+  color: #f0f9ff;
+  text-shadow: 0 0 16px rgba(255,255,255,0.25);
+}
