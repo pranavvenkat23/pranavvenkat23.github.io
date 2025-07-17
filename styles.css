@@ -50,21 +50,37 @@ h1, h2, h3 {
   text-shadow: 0 4px 8px rgba(56,189,248,0.3);
 }
 
-/* ==== DROPDOWN ==== */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: #1e293b;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
-  z-index: 10;
+/* ==== DROPDOWN FIXED ==== */
+.dropdown {
+  position: relative;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown > a {
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1e293b;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  z-index: 999;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  visibility: visible;
+  opacity: 1;
 }
 
 .dropdown-content li {
@@ -239,6 +255,7 @@ footer {
   transform: translateY(0);
 }
 
+/* ==== GRID ACADEMIC CARDS ==== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -267,48 +284,4 @@ footer {
 .grid-card ul {
   padding-left: 1.2rem;
   line-height: 1.6;
-}
-
-/* Fade-in support */
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Fix dropdown hover issue */
-.dropdown {
-  position: relative;
-}
-
-.dropdown > a {
-  display: block;
-  padding: 0.5rem 0;
-}
-
-.dropdown-content {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #1e293b;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
-  min-width: 200px;
-  padding: 0.5rem 0;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-
-.dropdown:hover .dropdown-content,
-.dropdown-content:hover {
-  visibility: visible;
-  opacity: 1;
 }
