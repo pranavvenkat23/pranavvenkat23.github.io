@@ -285,21 +285,30 @@ footer {
   position: relative;
 }
 
+.dropdown > a {
+  display: block;
+  padding: 0.5rem 0;
+}
+
 .dropdown-content {
-  display: none;
-  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #1e293b;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
-  padding: 0.5rem 0;
   min-width: 200px;
+  padding: 0.5rem 0;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .dropdown:hover .dropdown-content,
 .dropdown-content:hover {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 }
