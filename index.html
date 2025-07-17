@@ -1,210 +1,122 @@
-/* ==== GLOBAL ==== */
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f8fafc;
-  color: #1f2937;
-}
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pranav Venkateswaran</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><a href="index.html">Pranav Venkateswaran.</a></div>
+    <nav>
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#">About ▾</a>
+          <ul class="dropdown-content centered-dropdown fixed-width adjusted-padding">
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="accomplishments.html">Accomplishments</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="experience.html">Work Experience</a></li>
+          </ul>
+        </li>
+        <li><a href="research.html">Research & Publications</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
-a {
-  text-decoration: none;
-}
+  <section class="mini-hero improved-banner">
+    <div class="glow-banner">
+      <h1 class="glow-text fade-in">Researcher / Advocate / Innovator</h1>
+    </div>
+  </section>
 
-h1, h2, h3 {
-  margin: 0;
-}
+  <section class="intro-wrapper">
+    <div class="intro-section aligned responsive-align">
+      <div class="intro-text">
+        <h2>Hi, I'm Pranav</h2>
+        <p>
+          I'm an incoming sophomore at <strong>Thomas Jefferson High School for Science and Technology</strong>, where I pursue my passion for neuroscience and computational biology. I'm deeply curious about the brain, biology, and how intelligent systems can be modeled, and I’ve dedicated my time to research, leadership, and impactful service that challenges me to grow and contribute. This website is a reflection of my work, mindset, and aspirations.
+        </p>
+        <a class="read-more" href="profile.html">Read More</a>
+      </div>
+      <div class="intro-image">
+        <img src="assets/pranav-profile-vertical.jpg" alt="Pranav profile vertical" class="vertical-img responsive-img" />
+      </div>
+    </div>
+  </section>
 
-/* ==== NAVBAR ==== */
-.navbar {
-  background: #0f172a;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
+  <section class="cards-section">
+    <div class="card-grid">
+      <div class="info-card with-image flipped">
+        <div class="card-text">
+          <h3>Academics</h3>
+          <p>AP & Honors courses that reflect my academic rigor and passion for STEM.</p>
+          <a href="academics.html" class="card-btn">Explore</a>
+        </div>
+        <img src="assets/card-academics.jpg" alt="Academics" class="card-img" />
+      </div>
+      <div class="info-card with-image flipped">
+        <div class="card-text">
+          <h3>Accomplishments</h3>
+          <p>Recognitions for academic performance, service, and extracurricular excellence.</p>
+          <a href="accomplishments.html" class="card-btn">Explore</a>
+        </div>
+        <img src="assets/card-accomplishments.jpg" alt="Accomplishments" class="card-img" />
+      </div>
+      <div class="info-card with-image flipped">
+        <div class="card-text">
+          <h3>Activities</h3>
+          <p>Clubs and programs I’m part of — from research to debate, EMT, TSA and more.</p>
+          <a href="activities.html" class="card-btn">Explore</a>
+        </div>
+        <img src="assets/card-activities.jpg" alt="Activities" class="card-img" />
+      </div>
+      <div class="info-card with-image flipped">
+        <div class="card-text">
+          <h3>Work Experience</h3>
+          <p>Internships and shadowing that help shape my professional identity and skills.</p>
+          <a href="experience.html" class="card-btn">Explore</a>
+        </div>
+        <img src="assets/card-experience.jpg" alt="Experience" class="card-img" />
+      </div>
+      <div class="info-card with-image flipped">
+        <div class="card-text">
+          <h3>Research & Publications</h3>
+          <p>My work in bioinformatics and neuroscience — real projects with real impact.</p>
+          <a href="research.html" class="card-btn">Explore</a>
+        </div>
+        <img src="assets/card-research.jpg" alt="Research" class="card-img" />
+      </div>
+      <div class="info-card with-image flipped">
+        <div class="card-text">
+          <h3>Profile</h3>
+          <p>My digital résumé, social links, and contact info for collaborators & mentors.</p>
+          <a href="profile.html" class="card-btn">Explore</a>
+        </div>
+        <img src="assets/card-profile.jpg" alt="Profile" class="card-img" />
+      </div>
+      <div class="info-card with-image flipped">
+        <div class="card-text">
+          <h3>Blog</h3>
+          <p>Brief thoughts on science, leadership, and lessons learned along the way.</p>
+          <a href="blog.html" class="card-btn">Explore</a>
+        </div>
+        <img src="assets/card-blog.jpg" alt="Blog" class="card-img" />
+      </div>
+    </div>
+  </section>
 
-.logo a {
-  color: #e0f2fe;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
+  <footer>
+    <p>&copy; 2025 Pranav Venkateswaran. All rights reserved.</p>
+  </footer>
 
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.menu a {
-  color: #e0f2fe;
-  position: relative;
-  transition: all 0.3s;
-}
-
-.menu a:hover {
-  color: #38bdf8;
-  text-shadow: 0 4px 8px rgba(56,189,248,0.3);
-}
-
-/* ==== DROPDOWN ==== */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: #1e293b;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
-  z-index: 10;
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dropdown-content li {
-  padding: 0.6rem 1.2rem;
-  width: 100%;
-}
-
-.dropdown-content li a {
-  color: #e0f2fe;
-}
-
-/* ==== MINI HERO ==== */
-.mini-hero {
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.05), #0a1433 90%);
-  padding: 5rem 0;
-  text-align: center;
-}
-
-.glow-text {
-  color: white;
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  animation: fadeIn 1.5s ease;
-}
-
-/* ==== INTRO SECTION ==== */
-.intro-wrapper {
-  padding: 3rem 2rem;
-}
-
-.intro-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.intro-text {
-  flex: 1;
-  min-width: 280px;
-}
-
-.intro-text h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.intro-text p {
-  line-height: 1.7;
-}
-
-.read-more {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background: #0f172a;
-  color: white;
-  border-radius: 6px;
-  transition: all 0.3s;
-}
-
-.read-more:hover {
-  background: #1e3a8a;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.vertical-img {
-  max-width: 240px;
-  border-radius: 12px;
-}
-
-/* ==== CARDS SECTION ==== */
-.cards-section {
-  padding: 3rem 2rem;
-  background: #f1f5f9;
-}
-
-.card-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.info-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
-
-.card-text {
-  max-width: 60%;
-}
-
-.card-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #1e40af;
-  color: white;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.card-btn:hover {
-  background: #3b82f6;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.card-img {
-  width: 160px;
-  height: auto;
-  border-radius: 12px;
-  margin-left: 2rem;
-}
-
-/* ==== FOOTER ==== */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: #0f172a;
-  color: #cbd5e1;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-}
-
-/* ==== ANIMATIONS ==== */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+  <script src="script.js"></script>
+</body>
+</html>
