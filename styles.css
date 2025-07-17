@@ -221,3 +221,34 @@ footer {
   color: #f0f9ff;
   text-shadow: 0 0 16px rgba(255,255,255,0.25);
 }
+
+.improved-banner {
+  position: relative;
+  background: #0a1433;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.improved-banner::before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.improved-banner h1 {
+  font-size: 2.1rem;
+  color: white;
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  letter-spacing: 1.2px;
+  animation: fadeIn 1.2s ease;
+  font-weight: 600;
+}
