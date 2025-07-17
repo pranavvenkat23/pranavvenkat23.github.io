@@ -76,20 +76,36 @@ h1, h2, h3 {
   color: #e0f2fe;
 }
 
-/* ==== MINI HERO ==== */
-.mini-hero {
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.05), #0a1433 90%);
-  padding: 5rem 0;
-  text-align: center;
+/* ==== MINI HERO / GLOW BANNER ==== */
+.improved-banner {
+  position: relative;
+  background: #0a1433;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.glow-text {
+.improved-banner::before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.improved-banner h1 {
+  font-size: 2.1rem;
   color: white;
-  font-size: 1.8rem;
+  z-index: 1;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  letter-spacing: 1.2px;
+  animation: fadeIn 1.2s ease;
   font-weight: 600;
-  letter-spacing: 1px;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  animation: fadeIn 1.5s ease;
 }
 
 /* ==== INTRO SECTION ==== */
@@ -207,48 +223,4 @@ footer {
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
-}
-
-.improved-banner {
-  background: radial-gradient(circle at center, rgba(255,255,255,0.07) 0%, #0a1331 90%);
-  padding: 5rem 0;
-  text-align: center;
-  box-shadow: inset 0 0 80px rgba(255,255,255,0.05);
-}
-
-.improved-banner h1 {
-  font-size: 2rem;
-  color: #f0f9ff;
-  text-shadow: 0 0 16px rgba(255,255,255,0.25);
-}
-
-.improved-banner {
-  position: relative;
-  background: #0a1433;
-  padding: 6rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.improved-banner::before {
-  content: "";
-  position: absolute;
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%);
-  filter: blur(60px);
-  opacity: 0.4;
-  z-index: 0;
-}
-
-.improved-banner h1 {
-  font-size: 2.1rem;
-  color: white;
-  z-index: 1;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  letter-spacing: 1.2px;
-  animation: fadeIn 1.2s ease;
-  font-weight: 600;
 }
