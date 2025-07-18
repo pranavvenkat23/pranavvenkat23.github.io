@@ -341,3 +341,115 @@ footer {
   gap: 2rem;
   padding: 0 2rem;
 }
+
+/* === RESEARCH GRID === */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.research-grid::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.research-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.research-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.research-box h3 {
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+.research-box .citation {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* === RESEARCH EXPERIENCES === */
+.research-experiences {
+  padding: 3rem 2rem;
+  background: #f8fafc;
+}
+
+.research-experiences h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.exp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.exp-box {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 700px;
+}
+
+.exp-box.left {
+  align-self: flex-start;
+}
+
+.exp-box.right {
+  align-self: flex-end;
+}
+
+.exp-box h4 {
+  margin-bottom: 0.4rem;
+  color: #0f172a;
+}
+
+/* === BLOG CTA === */
+.blog-cta {
+  background: #0f172a;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: #1e40af;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #3b82f6;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
