@@ -37,8 +37,6 @@ h1, h2, h3 {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
 }
 
 .menu a {
@@ -52,7 +50,6 @@ h1, h2, h3 {
   text-shadow: 0 4px 8px rgba(56,189,248,0.3);
 }
 
-/* ==== DROPDOWN FIXED ==== */
 .dropdown {
   position: relative;
 }
@@ -62,40 +59,30 @@ h1, h2, h3 {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #1e293b;
-  border-radius: 0.5rem;
+  background: #1e293b;
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  min-width: 200px;
-  padding: 0.5rem 0;
+  border-radius: 0.5rem;
   z-index: 999;
-  flex-direction: column;
+  padding: 0.5rem 0;
+  min-width: 200px;
 }
 
 .dropdown:hover .dropdown-content,
 .dropdown-content:hover {
   display: flex;
+  flex-direction: column;
 }
 
 .dropdown-content li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  padding: 0.6rem 1.2rem;
+  width: 100%;
 }
 
 .dropdown-content li a {
-  display: block;
-  padding: 0.75rem 1.2rem;
   color: #e0f2fe;
-  white-space: nowrap;
-  transition: background 0.2s;
 }
 
-.dropdown-content li a:hover {
-  background-color: #334155;
-  color: #ffffff;
-}
-
-/* ==== MINI HERO ==== */
+/* ==== HERO / BANNER ==== */
 .improved-banner {
   position: relative;
   background: #0a1433;
@@ -177,7 +164,7 @@ h1, h2, h3 {
   border-radius: 12px;
 }
 
-/* ==== CARDS SECTION ==== */
+/* ==== CARD GRID ==== */
 .cards-section {
   padding: 3rem 2rem;
   background: #f1f5f9;
@@ -231,39 +218,6 @@ h1, h2, h3 {
   margin-left: 2rem;
 }
 
-/* ==== GRID ACADEMIC CARDS ==== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.grid-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-
-.grid-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-}
-
-.grid-card h3 {
-  margin-bottom: 1rem;
-  color: #0f172a;
-}
-
-.grid-card ul {
-  list-style: none;
-  padding-left: 0;
-  line-height: 1.6;
-  margin: 0;
-}
-
 /* ==== FOOTER ==== */
 footer {
   text-align: center;
@@ -291,165 +245,115 @@ footer {
   transform: translateY(0);
 }
 
-.highlight-card {
-  grid-column: span 3;
-  background: #e8f1ff;
-  text-align: center;
-  padding: 2rem;
-  margin-bottom: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.highlight-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: #0f172a;
-}
-
-.highlight-card p {
-  font-size: 1rem;
-  color: #1f2937;
-}
-
-.academics-header-card {
-  background: #e8f1ff;
-  padding: 1.5rem 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto 2rem auto;
-}
-
-.academics-header-card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #0f172a;
-  margin-bottom: 0.5rem;
-}
-
-.academics-header-card p {
-  font-size: 1rem;
-  color: #1f2937;
-}
-
-.academic-grid {
+/* ==== GRID LAYOUT FOR RESEARCH ==== */
+.timeline-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  padding: 0 2rem;
-}
-
-/* === RESEARCH GRID === */
-.research-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 4rem 2rem;
   position: relative;
+  padding: 2rem 0;
 }
 
-.research-grid::before {
+.timeline-grid::before {
   content: "";
   position: absolute;
-  left: 50%;
   top: 0;
-  bottom: 0;
-  width: 4px;
-  background: rgba(0, 0, 0, 0.05);
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #d1d5db;
   transform: translateX(-50%);
-  z-index: 0;
 }
 
-.research-box {
+.timeline-card {
   background: white;
   padding: 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
-  position: relative;
   z-index: 1;
 }
 
-.research-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
-.research-box h3 {
-  margin-bottom: 0.5rem;
-  color: #0f172a;
-}
-
-.research-box .citation {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #64748b;
+.timeline-card i {
   font-style: italic;
+  color: #64748b;
 }
 
-/* === RESEARCH EXPERIENCES === */
-.research-experiences {
+/* ==== BLOG CTA ==== */
+.blog-banner {
+  background: #1e293b;
   padding: 3rem 2rem;
-  background: #f8fafc;
-}
-
-.research-experiences h2 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
+  color: white;
 }
 
-.exp-container {
+.blog-banner h2 {
+  margin-bottom: 1rem;
+}
+
+.blog-btn {
+  background: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.blog-btn:hover {
+  background: #2563eb;
+  cursor: pointer;
+}
+
+/* ==== RESEARCH EXPERIENCE BLOCKS ==== */
+.research-experience {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 2rem;
 }
 
-.exp-box {
-  background: white;
-  border-radius: 1rem;
+.experience-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  background: #e2e8f0;
   padding: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 700px;
+  border-radius: 1rem;
 }
 
-.exp-box.left {
-  align-self: flex-start;
+.experience-block:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-.exp-box.right {
-  align-self: flex-end;
+.experience-text {
+  flex: 1;
 }
 
-.exp-box h4 {
-  margin-bottom: 0.4rem;
-  color: #0f172a;
+.experience-text h3 {
+  margin-bottom: 0.3rem;
 }
 
-/* === BLOG CTA === */
-.blog-cta {
-  background: #0f172a;
-  color: white;
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
-  background: #1e40af;
-  color: white;
-  border-radius: 6px;
+.experience-text h4 {
+  margin-bottom: 0.6rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  color: #475569;
 }
 
-.cta-button:hover {
-  background: #3b82f6;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+.experience-text p {
+  margin: 0;
+}
+
+.experience-img {
+  width: 200px;
+  height: auto;
+  border-radius: 1rem;
+  background: #cbd5e1;
 }
