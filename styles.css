@@ -65,7 +65,6 @@ h1, h2, h3 {
   z-index: 999;
   padding: 0.5rem 0;
   min-width: 200px;
-  transition: opacity 0.3s ease;
   flex-direction: column;
   align-items: center;
 }
@@ -85,7 +84,7 @@ h1, h2, h3 {
   color: #e0f2fe;
 }
 
-/* ==== HERO BANNER ==== */
+/* ==== HERO ==== */
 .improved-banner {
   position: relative;
   background: #0a1433;
@@ -113,42 +112,36 @@ h1, h2, h3 {
   color: #ffffff;
   z-index: 1;
   letter-spacing: 1.4px;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.2), 0 0 12px rgba(255, 255, 255, 0.15);
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.2),
+    0 0 8px rgba(255, 255, 255, 0.2),
+    0 0 12px rgba(255, 255, 255, 0.15);
   animation: fadeIn 1s ease-out;
 }
 
-/* ==== PUBLICATION GRID ==== */
+/* ==== RESEARCH PUBLICATIONS SECTION ==== */
 .publication-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
-  padding: 3rem;
+  padding: 3rem 1rem;
   position: relative;
-}
-
-.publication-grid::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 4px;
-  background: #d1d5db;
-  transform: translateX(-50%);
-  z-index: 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .publication-card {
-  background: #ffffff;
+  flex: 1 1 280px;
+  max-width: 300px;
+  background: #fff;
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .publication-card:hover {
@@ -156,37 +149,36 @@ h1, h2, h3 {
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
-.publication-card .pub-btn {
+.pub-btn {
   margin-top: 1rem;
-  align-self: start;
   padding: 0.5rem 1rem;
   background: #1e40af;
   color: white;
   border-radius: 6px;
-  transition: all 0.3s;
+  transition: 0.3s;
+  text-align: center;
+  display: inline-block;
+  font-size: 0.9rem;
 }
 
-.publication-card .pub-btn:hover {
+.pub-btn:hover {
   background: #3b82f6;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* ==== RESEARCH EXPERIENCES ==== */
+/* ==== RESEARCH EXPERIENCES SECTION ==== */
 .research-experiences {
   padding: 4rem 2rem;
-}
-
-.research-experiences h2 {
-  text-align: center;
-  margin-bottom: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .research-entry {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
   flex-wrap: wrap;
   align-items: center;
+  margin-bottom: 3rem;
+  gap: 2rem;
 }
 
 .research-entry:nth-child(even) {
@@ -194,38 +186,39 @@ h1, h2, h3 {
 }
 
 .research-image-placeholder {
-  width: 280px;
-  height: 200px;
+  width: 260px;
+  height: 180px;
   background: #cbd5e1;
-  border-radius: 12px;
+  border-radius: 1rem;
 }
 
 .research-text {
   flex: 1;
-  min-width: 250px;
+  min-width: 240px;
 }
 
-/* ==== BLOG BANNER ==== */
+/* ==== BLOG CTA SECTION ==== */
 .blog-cta {
   background: #3b82f6;
   color: white;
+  padding: 3rem 1.5rem;
   text-align: center;
-  padding: 3rem 1rem;
 }
 
 .blog-cta h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
 }
 
 .blog-cta a {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
   background: white;
-  color: #1e40af;
+  color: #1e3a8a;
   font-weight: 600;
+  padding: 0.75rem 1.5rem;
   border-radius: 6px;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
 }
 
 .blog-cta a:hover {
