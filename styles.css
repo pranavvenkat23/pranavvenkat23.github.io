@@ -477,3 +477,31 @@ footer {
   color: #475569;
   margin-bottom: 0.5rem;
 }
+
+.profile-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.icon-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.icon-grid .icon img {
+  width: 48px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.icon-grid .icon:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.resume-download {
+  margin-top: 3rem;
+}
