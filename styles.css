@@ -481,6 +481,7 @@ footer {
 .profile-section {
   padding: 4rem 2rem;
   text-align: center;
+  margin-bottom: 2rem; /* Added to give space before contact */
 }
 
 .icon-grid {
@@ -507,15 +508,16 @@ footer {
 }
 
 .footer-spacer {
-  height: 80px; /* Adjust this if needed */
+  height: 80px;
 }
 
+/* === CONTACT CTA SECTION === */
 .contact-cta {
   background: #e0f2fe;
   color: #0f172a;
   text-align: center;
   padding: 3rem 2rem;
-  margin: 4rem auto 2rem auto;
+  margin: 4rem auto 4rem auto; /* Adjusted to push footer down */
   border-radius: 1.5rem;
   max-width: 800px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
