@@ -506,41 +506,6 @@ footer {
   margin-top: 3rem;
 }
 
-/* === CONTACT CTA SECTION === */
-.contact-cta {
-  background: #e0f2fe;
-  color: #0f172a;
-  text-align: center;
-  padding: 3rem 2rem;
-  margin: 4rem auto 0 auto;
-  border-radius: 1.5rem;
-  max-width: 800px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-out;
-}
-
-.contact-cta h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
-}
-
-.contact-cta p {
-  font-size: 1.1rem;
-  margin-bottom: 0.4rem;
-  line-height: 1.6;
-}
-
-.contact-cta a {
-  color: #1e3a8a;
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.contact-cta a:hover {
-  color: #2563eb;
-  text-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-}
-
 /* === CONTACT CTA SECTION FIXED === */
 .contact-cta {
   background: #e0f2fe;
