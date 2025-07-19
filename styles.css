@@ -351,18 +351,6 @@ footer {
   position: relative;
 }
 
-.research-grid::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: rgba(0, 0, 0, 0.05);
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
 .research-box {
   background: white;
   padding: 1.5rem;
