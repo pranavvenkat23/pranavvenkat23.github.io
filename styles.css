@@ -719,3 +719,10 @@ footer {
 .blog-post p {
   color: #1f2937 !important;
 }
+
+.blog-post {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+}
