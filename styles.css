@@ -481,7 +481,7 @@ footer {
 .profile-section {
   padding: 4rem 2rem;
   text-align: center;
-  margin-bottom: 2rem; /* Added to give space before contact */
+  margin-bottom: 2rem;
 }
 
 .icon-grid {
@@ -493,7 +493,8 @@ footer {
 }
 
 .icon-grid .icon img {
-  width: 48px;
+  width: 42px;
+  height: 42px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 8px;
 }
@@ -504,20 +505,16 @@ footer {
 }
 
 .resume-download {
-  margin-top: 3rem;
+  display: inline-block;
+  margin-top: 1.5rem;
 }
 
-.footer-spacer {
-  height: 80px;
-}
-
-/* === CONTACT CTA SECTION === */
 .contact-cta {
   background: #e0f2fe;
   color: #0f172a;
   text-align: center;
   padding: 3rem 2rem;
-  margin: 4rem auto 4rem auto; /* Adjusted to push footer down */
+  margin: 4rem auto 4rem auto;
   border-radius: 1.5rem;
   max-width: 800px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
@@ -544,4 +541,9 @@ footer {
 .contact-cta a:hover {
   color: #2563eb;
   text-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Push footer properly */
+footer {
+  margin-top: 3rem;
 }
