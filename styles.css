@@ -709,3 +709,7 @@ footer {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   transform: translateY(-2px);
 }
+
+.blog-post {
+  color: #1f2937; /* dark gray for readability */
+}
