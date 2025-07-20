@@ -553,7 +553,7 @@ footer {
   color: #0f172a;
   text-align: center;
   padding: 2.5rem 2rem;
-  margin: 3rem auto;
+  margin: 1.5rem auto 3rem auto; /* reduced top margin from 3rem to 1.5rem */
   border-radius: 1.25rem;
   max-width: 600px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
