@@ -568,3 +568,117 @@ footer {
 .resume-box .cta-button {
   margin-top: 0;
 }
+
+/* ==== BLOG PAGE TIMELINE ==== */
+.blog-timeline {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.blog-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #cbd5e1;
+  z-index: 0;
+}
+
+.blog-entry {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  z-index: 1;
+  animation: fadeIn 1s ease;
+}
+
+.blog-entry::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: -1.4rem;
+  width: 16px;
+  height: 16px;
+  background: #3b82f6;
+  border: 3px solid white;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
+}
+
+.blog-entry h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #0f172a;
+}
+
+.blog-entry p {
+  color: #475569;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.blog-entry a.read-post {
+  display: inline-block;
+  background: #1e40af;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.blog-entry a.read-post:hover {
+  background: #2563eb;
+}
+
+/* === INDIVIDUAL POST STYLES (blog-post-x.html) === */
+.blog-post {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.blog-post h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.blog-post h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+}
+
+.blog-post p {
+  margin-bottom: 1.2rem;
+}
+
+.blog-post img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.view-count {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 1rem;
+  text-align: right;
+}
