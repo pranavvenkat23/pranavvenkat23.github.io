@@ -281,9 +281,9 @@ footer {
 }
 
 .fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .fade-in.visible {
@@ -577,6 +577,9 @@ footer {
   line-height: 1.8;
   font-size: 1.1rem;
   color: #1f2937;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .blog-post h1 {
