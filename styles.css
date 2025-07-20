@@ -576,29 +576,31 @@ footer {
   margin: 0 auto;
   line-height: 1.8;
   font-size: 1.1rem;
+  color: #1f2937;
 }
 
 .blog-post h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
   color: #0f172a;
 }
 
 .blog-post h2 {
   font-size: 1.4rem;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
   color: #1e3a8a;
+  font-weight: 500;
 }
 
 .blog-post p {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .blog-post img {
   max-width: 100%;
   border-radius: 12px;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
