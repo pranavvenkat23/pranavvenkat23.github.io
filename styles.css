@@ -585,7 +585,10 @@ footer {
 .blog-post h1 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  color: #0f172a;
+  color: #0f172a !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .blog-post h2 {
