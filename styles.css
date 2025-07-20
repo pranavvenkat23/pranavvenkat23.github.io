@@ -732,3 +732,23 @@ footer {
   transition: none !important;
   animation: none !important;
 }
+
+.blog-hero-banner {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero-text-box {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-subtext {
+  color: #e2e8f0; /* light slate */
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-top: 1.2rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
