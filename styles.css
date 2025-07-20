@@ -752,3 +752,28 @@ footer {
   line-height: 1.6;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
+
+.flex-exp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.exp-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.exp-img-wrapper {
+  flex-shrink: 0;
+  max-width: 320px;
+  width: 100%;
+}
+
+.exp-img-right {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
