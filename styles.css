@@ -549,15 +549,14 @@ footer {
 }
 
 .resume-box {
-  margin-top: 2rem;
-  background: #dbeafe;
+  background: #f0f9ff;
   color: #0f172a;
   text-align: center;
   padding: 2.5rem 2rem;
-  margin: 4rem auto 3rem auto;
-  border-radius: 1.5rem;
-  max-width: 800px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  margin: 3rem auto;
+  border-radius: 1.25rem;
+  max-width: 600px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   animation: fadeIn 1s ease-out;
 }
 
