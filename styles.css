@@ -711,5 +711,11 @@ footer {
 }
 
 .blog-post {
-  color: #1f2937; /* dark gray for readability */
+  color: #1f2937 !important;
+}
+
+.blog-post h1,
+.blog-post h2,
+.blog-post p {
+  color: #1f2937 !important;
 }
