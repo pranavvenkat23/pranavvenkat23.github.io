@@ -1,0 +1,354 @@
+---
+permalink: /
+layout: default
+redirect_from:
+  - /profile.html
+  - /research.html
+  - /experience.html
+  - /academics.html
+  - /accomplishments.html
+  - /activities.html
+  - /blog.html
+  - /blog-post-1.html
+  - /blog-post-2.html
+  - /blog-post-3.html
+---
+
+<section class="section" id="about">
+  <h2 class="section__title">About</h2>
+  <div class="lede">
+    <p>
+      I am a junior at <strong>Thomas Jefferson High School for Science and Technology</strong>, working
+      across machine learning research and software engineering. My research asks what evidence a model
+      actually uses when it appears to reason. My independent study of the visual cues vision-language
+      models use to reassemble natural and biomedical images is under review at an <strong>AAAI-27</strong>
+      workshop, and the NASA GeneLab capstone team I led had its explainable-AI (XAI) study of spaceflight gene
+      expression accepted to <strong>ASGSR 2026</strong>.
+    </p>
+    <p>
+      I build software to the same standard of evidence. Emercity, an offline-first household emergency
+      app, runs a deterministic decision engine covered by 462 unit tests; Finance Digest turns Treasury
+      data into a personal federal tax receipt whose line items always sum to the computed tax.
+    </p>
+  </div>
+
+  <ul class="quicklinks">
+    <li><a class="quicklink" href="{{ site.author.resume | relative_url }}">Resume (PDF)</a></li>
+    <li><a class="quicklink" href="https://github.com/{{ site.author.github }}">GitHub</a></li>
+    <li><a class="quicklink" href="#research">Research</a></li>
+    <li><a class="quicklink" href="#projects">Engineering projects</a></li>
+    <li><a class="quicklink" href="{{ '/projects/emercity/' | relative_url }}">Emercity case study</a></li>
+  </ul>
+</section>
+
+<section class="section" id="timeline">
+  <h2 class="section__title">Timeline</h2>
+  <ol class="timeline" reversed>
+    {%- for t in site.data.timeline %}
+    <li class="tl tl--{{ t.kind }}">
+      <div class="tl__head">
+        <span class="tl__date">{{ t.date }}</span>
+        <span class="tl__tag">{{ t.tag }}</span>
+      </div>
+      <p class="tl__text">{{ t.text }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>
+
+<section class="section" id="interests">
+  <h2 class="section__title">Research interests</h2>
+  <div class="interests">
+    {%- for area in site.data.interests %}
+    <article class="interest">
+      <h3 class="interest__title">{{ area.title }}</h3>
+      <p class="interest__summary">{{ area.summary }}</p>
+      {%- if area.work and area.work.size > 0 %}
+      <p class="interest__work">
+        {%- for w in area.work %}<span><a href="{{ w.url }}">{{ w.label }}</a></span>{% endfor -%}
+      </p>
+      {%- endif %}
+      <ul class="tags">
+        {%- for t in area.topics %}<li class="tag">{{ t }}</li>{% endfor %}
+      </ul>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section" id="research">
+  <h2 class="section__title">Selected research</h2>
+
+  {%- for r in site.data.research %}
+  {%- unless r.compact %}
+  <article class="entry" id="{{ r.id }}">
+    <div class="entry__head">
+      <h3 class="entry__title">{{ r.title }}</h3>
+      <span class="meta">{{ r.period }}</span>
+    </div>
+
+    <p class="entry__authors">{{ r.authors }}</p>
+
+    <p class="entry__meta">
+      <span class="status status--{{ r.status_class }}">{{ r.status }}</span>
+      <span class="entry__role">{{ r.role }}</span>
+    </p>
+
+    {%- if r.image %}
+    <figure class="entry__figure">
+      <img src="{{ r.image | relative_url }}" alt="{{ r.image_alt }}" loading="lazy" width="560" height="560">
+    </figure>
+    {%- endif %}
+
+    <div class="entry__body">
+      <p><span class="entry__label">Problem.</span> {{ r.problem }}</p>
+      <p><span class="entry__label">Approach.</span> {{ r.approach }}</p>
+    </div>
+
+    {%- if r.built %}
+    <div class="project__section">
+      <h4>What I built</h4>
+      <ul class="project__points">
+        {%- for b in r.built %}<li>{{ b }}</li>{% endfor %}
+      </ul>
+    </div>
+    <h4 class="entry__subhead">Findings</h4>
+    {%- endif %}
+
+    {%- if r.findings %}
+    <ul class="entry__findings">
+      {%- for f in r.findings %}<li>{{ f }}</li>{% endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if r.takeaway %}
+    <p class="entry__takeaway">{{ r.takeaway }}</p>
+    {%- endif %}
+
+    {%- if r.links and r.links.size > 0 %}
+    <ul class="evidence">
+      {%- for l in r.links %}<li><a href="{{ l.url | relative_url }}">{{ l.label }}</a></li>{% endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if r.note %}<p class="note">{{ r.note }}</p>{% endif %}
+  </article>
+  {%- endunless %}
+  {%- endfor %}
+
+  {%- assign earlier = site.data.research | where: "compact", true %}
+  {%- if earlier.size > 0 %}
+  <div class="earlier">
+    <h3 class="subhead">Earlier work</h3>
+    {%- for r in earlier %}
+    <p class="earlier__item" id="{{ r.id }}">
+      {{ r.title }}. <span class="earlier__context">{{ r.context }}.</span>
+      {%- if r.doi %} <a class="earlier__doi" href="https://doi.org/{{ r.doi }}">doi:{{ r.doi }}</a>{% endif %}
+    </p>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+</section>
+
+<section class="section" id="projects">
+  <h2 class="section__title">Selected engineering projects</h2>
+
+  {%- for p in site.data.projects %}
+  {%- if p.featured %}
+  <article class="project" id="{{ p.id }}">
+    <div class="entry__head">
+      <h3 class="project__name">{{ p.name }}</h3>
+      <span class="meta">{{ p.role }} · {{ p.period }}</span>
+    </div>
+    <p class="project__tagline">{{ p.tagline }}</p>
+
+    {%- if p.image %}
+    <figure class="project__figure">
+      <img src="{{ p.image | relative_url }}" alt="{{ p.image_alt }}" loading="lazy" width="767" height="544">
+    </figure>
+    {%- endif %}
+
+    <div class="project__section">
+      <h4>What it does</h4>
+      <p class="project__prose">{{ p.what }}</p>
+    </div>
+
+    <div class="project__section">
+      <h4>What I built</h4>
+      <ul class="project__points">
+        {%- for b in p.built %}<li>{{ b }}</li>{% endfor %}
+      </ul>
+    </div>
+
+    {%- if p.rigor %}
+    <div class="project__section">
+      <h4>Testing and validation</h4>
+      <p class="project__prose">{{ p.rigor }}</p>
+    </div>
+    {%- endif %}
+
+    {%- if p.limits %}
+    <div class="project__section">
+      <h4>Known limits</h4>
+      <p class="project__prose">{{ p.limits }}</p>
+    </div>
+    {%- endif %}
+
+    <ul class="tags">
+      {%- for s in p.stack %}<li class="tag">{{ s }}</li>{% endfor %}
+    </ul>
+
+    {%- if p.links and p.links.size > 0 %}
+    <ul class="evidence">
+      {%- for l in p.links %}<li><a href="{{ l.url | relative_url }}">{{ l.label }}</a></li>{% endfor %}
+    </ul>
+    {%- endif %}
+  </article>
+  {%- endif %}
+  {%- endfor %}
+
+  {%- for p in site.data.projects %}
+  {%- unless p.featured %}
+  <article class="project project--compact" id="{{ p.id }}">
+    <h3 class="project__name">{{ p.name }}</h3><span class="project__inline-sep">·</span><p class="project__tagline">{{ p.tagline }}</p>
+    {%- if p.detail %}<p class="project__detail">{{ p.detail }}</p>{% endif %}
+    <ul class="tags">
+      {%- for s in p.stack %}<li class="tag">{{ s }}</li>{% endfor %}
+    </ul>
+    {%- if p.links and p.links.size > 0 %}
+    <ul class="evidence">
+      {%- for l in p.links %}<li><a href="{{ l.url | relative_url }}">{{ l.label }}</a></li>{% endfor %}
+    </ul>
+    {%- endif %}
+    {%- if p.note %}<p class="note">{{ p.note }}</p>{% endif %}
+  </article>
+  {%- endunless %}
+  {%- endfor %}
+</section>
+
+<section class="section" id="skills">
+  <h2 class="section__title">Technical skills</h2>
+  <dl class="skills">
+    {%- for s in site.data.skills %}
+    <div class="skill">
+      <dt class="skill__label">{{ s.label }}</dt>
+      <dd class="skill__items">
+        {{ s.items }}
+        {%- if s.from %}<span class="skill__from">Used in {{ s.from }}</span>{% endif %}
+      </dd>
+    </div>
+    {%- endfor %}
+  </dl>
+</section>
+
+<section class="section" id="experience">
+  <h2 class="section__title">Experience</h2>
+
+  {%- for e in site.data.experience %}
+  <article class="role">
+    <div class="role__head">
+      <h3 class="role__title">
+        {{ e.role }}<span class="role__org">, {% if e.org_url %}<a href="{{ e.org_url }}">{{ e.org }}</a>{% else %}{{ e.org }}{% endif %}</span>
+      </h3>
+      <span class="meta">{{ e.period }}</span>
+    </div>
+    <p class="role__kind">{{ e.kind }}</p>
+    <ul class="role__points">
+      {%- for pt in e.points %}<li>{{ pt }}</li>{% endfor %}
+    </ul>
+    {%- if e.links and e.links.size > 0 %}
+    <ul class="evidence">
+      {%- for l in e.links %}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
+    </ul>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+</section>
+
+<section class="section" id="awards">
+  <h2 class="section__title">Honors and awards</h2>
+  <ul class="awards">
+    {%- for a in site.data.awards %}
+    <li class="award">
+      <span class="award__year">{{ a.year }}</span>
+      <span>
+        <span class="award__title">{% if a.url %}<a href="{{ a.url }}">{{ a.title }}</a>{% else %}{{ a.title }}{% endif %}</span><span class="award__org"> · {{ a.org }}</span>
+        {%- if a.note %}<span class="award__note">{{ a.note }}</span>{% endif %}
+      </span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="section" id="leadership">
+  <h2 class="section__title">Leadership and service</h2>
+
+  <h3 class="subhead">Leadership</h3>
+  {%- for l in site.data.leadership.leadership %}
+  <article class="role">
+    <div class="role__head">
+      <h4 class="role__title">{{ l.role }}<span class="role__org">, {{ l.org }}</span></h4>
+      <span class="meta">{{ l.period }}</span>
+    </div>
+    {%- if l.points.size > 0 %}
+    <ul class="role__points">
+      {%- for pt in l.points %}<li>{{ pt }}</li>{% endfor %}
+    </ul>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+
+  <h3 class="subhead">Service and clinical</h3>
+  {%- for s in site.data.leadership.service %}
+  <article class="role">
+    <div class="role__head">
+      <h4 class="role__title">{{ s.role }}<span class="role__org">, {{ s.org }}</span></h4>
+      <span class="meta">{{ s.period }}</span>
+    </div>
+    {%- if s.kind != "" %}<p class="role__kind">{{ s.kind }}</p>{% endif %}
+    <ul class="role__points">
+      {%- for pt in s.points %}<li>{{ pt }}</li>{% endfor %}
+    </ul>
+  </article>
+  {%- endfor %}
+</section>
+
+<section class="section" id="education">
+  <h2 class="section__title">Education</h2>
+  <div class="school">
+    <div class="role__head">
+      <h3 class="role__title">Thomas Jefferson High School for Science and Technology<span class="role__org">, Alexandria, VA</span></h3>
+      <span class="meta">Class of 2028</span>
+    </div>
+    <p class="school__note">
+      Selective public STEM magnet school and Virginia Governor's School. Ranked No. 6 nationally by
+      U.S. News &amp; World Report (2026-27); No. 1 in the 2020 and 2021 editions.
+    </p>
+    <p class="school__note">
+      <span class="school__label">Coursework:</span> Web &amp; Mobile Application Development (AV, in progress) ·
+      AP Statistics · DNA Science 1 (in progress) · Bionanotechnology · Neurobiology (AV, upcoming) ·
+      AP Computer Science A · AP Biology · AP Physics C: Mechanics.
+      Outside school: MIT Beaver Works Summer Institute,
+      <a href="https://bwsix.edly.io/certificates/3f87e04c22984b66b1aa016f78df40b5">Version Control: Git &amp; GitHub</a> (2025).
+    </p>
+  </div>
+</section>
+
+
+<section class="section" id="contact">
+  <h2 class="section__title">Contact</h2>
+  <div class="contact">
+    <p>
+      I am glad to hear from researchers, engineers, and students working on related problems.
+      The fastest way to reach me is email.
+    </p>
+    <p>
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a> ·
+      <a href="mailto:{{ site.author.school_email }}">{{ site.author.school_email }}</a> ·
+      <a href="https://github.com/{{ site.author.github }}">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a> ·
+      <a href="https://orcid.org/{{ site.author.orcid }}">ORCID</a> ·
+      <a href="{{ site.author.resume | relative_url }}">Resume</a>
+    </p>
+  </div>
+</section>

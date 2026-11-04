@@ -1,0 +1,56 @@
+# Leadership, then service and clinical work ordered by strength.
+leadership:
+  - role: "Research Coordinator, Lincoln-Douglas Debate"
+    org: "Thomas Jefferson High School for Science and Technology"
+    period: "2024 - present"
+    points:
+      - "Coordinate topic research and evidence preparation for the Lincoln-Douglas team and mentor newer debaters."
+      - "Served as Logistics Coordinator for VHSL regional debate tournaments (45+ service hours)."
+
+  - role: "Outreach Committee Member"
+    org: "Loudoun County Youth Advisory Council (Loudoun County PRCS)"
+    period: "2026 - present"
+    points:
+      - "Plan community outreach on local public health concerns for a student-led county council, and help organize countywide service projects that bring teen input to local officials."
+
+  - role: "Member"
+    org: "Stanford Neuroscience Journal Club"
+    period: ""
+    points: []
+
+service:
+  - role: "EMT-Basic candidate"
+    org: "C.E.R.T. LLC"
+    kind: "Fair Oaks, VA"
+    period: "Jan - Sep 2026"
+    points:
+      - "Completed the EMT-B course and clinical rotations, met all ten required patient contacts, and passed the Virginia psychomotor examination."
+      - "Rode weekly with the Dale City Volunteer Fire Department, observing emergency response and prehospital care."
+
+  - role: "Volunteer, Diabetes Clinic"
+    org: "Washington DC VA Medical Center"
+    kind: "Washington, DC"
+    period: "Summer 2026"
+    points:
+      - "Three days a week for six weeks in an outpatient specialty clinic serving veterans with diabetes (112 hours)."
+
+  - role: "Volunteer, S52 Medical-Surgical / Intermediate Care"
+    org: "MedStar Georgetown University Hospital"
+    kind: "Washington, DC"
+    period: "Summer 2026"
+    points:
+      - "Twice-weekly four-hour shifts on an inpatient medical-surgical and intermediate care unit (24+ hours)."
+
+  - role: "Emergency Department physician shadowing"
+    org: "Sibley Memorial Hospital (Johns Hopkins Medicine)"
+    kind: "Washington, DC"
+    period: "Dec 2025 - Jul 2026"
+    points:
+      - "Observed patient evaluation and clinical decision-making in the emergency department (34 hours)."
+
+  - role: "Sound the Alarm Volunteer"
+    org: "American Red Cross"
+    kind: ""
+    period: ""
+    points:
+      - "Installed free smoke alarms in local homes and taught families fire safety alongside local fire departments."

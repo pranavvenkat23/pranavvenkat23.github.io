@@ -1,0 +1,50 @@
+/* Design tokens
+   ========================================================================== */
+
+// Typography
+$sans   : "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$serif  : "Source Serif 4", Georgia, "Times New Roman", serif;
+$mono   : ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+// Colour
+$bg            : #ffffff;
+$surface       : #f7f8fa;
+$surface-sunk  : #f2f4f7;
+$text          : #16181d;
+$text-soft     : #3f4654;
+$muted         : #656d7e;
+$border        : #e2e5ea;
+$border-strong : #cdd2db;
+
+$accent        : #22356a;
+$accent-hover  : #16244a;
+$accent-tint   : #eef1f7;
+
+// Geometry
+$radius      : 3px;
+$radius-lg   : 4px;
+$sidebar     : 268px;
+$gutter      : 56px;
+$max-width   : 1160px;
+$masthead-h  : 52px;
+
+// Breakpoints
+$bp-lg : 1080px;
+$bp-md : 860px;
+$bp-sm : 560px;
+
+// Category colours shared by status pills and the timeline
+$kind-review         : #2c4a9a;
+$kind-review-bg      : #eef2fa;
+$kind-accepted       : #b7791f;
+$kind-accepted-bg    : #fdf6ec;
+$kind-selection      : #9b3d34;
+$kind-selection-bg   : #fbf1ef;
+$kind-presentation   : #6d4fa0;
+$kind-presentation-bg: #f4f0fa;
+$kind-position       : #2f7a4f;
+$kind-position-bg    : #eef6f1;
+$kind-engineering    : #1f6f78;
+$kind-engineering-bg : #ecf5f6;
+$kind-course         : #4a5568;
+$kind-course-bg      : #f1f3f6;

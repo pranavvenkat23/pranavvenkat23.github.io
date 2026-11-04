@@ -1,0 +1,13 @@
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="masthead__home" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+    <nav class="masthead__nav" aria-label="Sections">
+      <ul>
+        {%- for link in site.data.navigation.main %}
+        <li><a href="{% unless page.url == '/' %}{{ '/' | relative_url }}{% endunless %}{{ link.url }}">{{ link.title }}</a></li>
+        {%- endfor %}
+        <li><a class="masthead__cv" href="{{ site.author.resume | relative_url }}">Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

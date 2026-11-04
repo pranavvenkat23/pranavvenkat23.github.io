@@ -1,0 +1,62 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{%- assign page_title = page.title | default: site.title -%}
+{%- if page.title -%}
+  {%- assign full_title = page.title | append: ' · ' | append: site.title -%}
+{%- else -%}
+  {%- assign full_title = site.title -%}
+{%- endif -%}
+{%- assign page_description = page.description | default: site.description -%}
+{%- assign canonical = page.url | replace: 'index.html', '' | absolute_url -%}
+{%- assign og_image = site.og_image | absolute_url -%}
+
+<title>{{ full_title | escape }}</title>
+<meta name="description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
+<meta name="author" content="{{ site.author.name }}">
+<link rel="canonical" href="{{ canonical }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ full_title | escape }}">
+<meta property="og:description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pranav Venkateswaran, Thomas Jefferson High School for Science and Technology">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ full_title | escape }}">
+<meta name="twitter:description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
+<meta name="twitter:image" content="{{ og_image }}">
+
+{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
+
+<link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-16x16.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author.name }}",
+  "url": "{{ site.url }}/",
+  "image": "{{ site.author.avatar | absolute_url }}",
+  "email": "mailto:{{ site.author.email }}",
+  "affiliation": { "@type": "EducationalOrganization", "name": "{{ site.author.affiliation }}" },
+  "identifier": "https://orcid.org/{{ site.author.orcid }}",
+  "sameAs": [
+    "https://github.com/{{ site.author.github }}",
+    "https://www.linkedin.com/in/{{ site.author.linkedin }}",
+    "https://orcid.org/{{ site.author.orcid }}"
+  ]
+}
+</script>

@@ -1,0 +1,648 @@
+/* Section-specific blocks
+   ========================================================================== */
+
+/* Research interests
+   -------------------------------------------------------------------------- */
+.interests {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.interest {
+  border: 1px solid $border;
+  border-left: 2px solid $accent;
+  border-radius: $radius;
+  padding: 14px 16px;
+  background: $bg;
+}
+
+.interest__title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: $text;
+  margin: 0;
+}
+
+.interest__summary {
+  margin: 5px 0 0;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: $text-soft;
+}
+
+.interest__work {
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  color: $muted;
+
+  a { font-weight: 500; }
+  span + span::before { content: "\00B7"; color: $muted; margin: 0 7px; }
+}
+
+/* Research entries
+   -------------------------------------------------------------------------- */
+.entry {
+  padding: 22px 0;
+  border-bottom: 1px solid $border;
+
+  &:last-child { border-bottom: 0; padding-bottom: 4px; }
+}
+
+.entry__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.entry__title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.42;
+  color: $text;
+  margin: 0;
+  flex: 1 1 320px;
+}
+
+.entry__authors {
+  margin: 6px 0 0;
+  font-size: 0.84rem;
+  color: $text-soft;
+
+  strong { color: $text; }
+}
+
+.entry__meta {
+  margin: 8px 0 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.entry__role {
+  font-size: 0.79rem;
+  color: $muted;
+}
+
+.entry__body {
+  margin-top: 12px;
+  font-size: 0.88rem;
+  line-height: 1.68;
+  color: $text-soft;
+
+  p { margin: 0 0 9px; }
+  p:last-child { margin-bottom: 0; }
+}
+
+.entry__label {
+  font-weight: 600;
+  color: $text;
+}
+
+.entry__findings {
+  margin: 10px 0 0;
+  padding-left: 17px;
+  font-size: 0.87rem;
+  line-height: 1.62;
+  color: $text-soft;
+
+  li { margin-bottom: 6px; }
+  li::marker { color: $border-strong; }
+}
+
+.entry__takeaway {
+  margin: 12px 0 0;
+  padding: 9px 13px;
+  background: $surface;
+  border-left: 2px solid $border-strong;
+  font-size: 0.86rem;
+  color: $text;
+}
+
+.entry__figure {
+  margin: 14px 0 0;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    border: 1px solid $border;
+    border-radius: $radius;
+  }
+}
+
+/* Projects
+   -------------------------------------------------------------------------- */
+.project {
+  padding: 24px 0;
+  border-bottom: 1px solid $border;
+
+  &:last-child { border-bottom: 0; padding-bottom: 4px; }
+}
+
+.project__name {
+  font-size: 1.04rem;
+  font-weight: 600;
+  color: $text;
+  margin: 0;
+}
+
+.project__tagline {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: $text-soft;
+}
+
+.project__figure {
+  margin: 16px 0 2px;
+
+  img {
+    display: block;
+    width: 100%;
+    border: 1px solid $border;
+    border-radius: $radius;
+    background: $surface;
+  }
+}
+
+.project__caption {
+  margin: 7px 0 0;
+  font-size: 0.74rem;
+  color: $muted;
+}
+
+.project__section {
+  margin-top: 14px;
+
+  h4 {
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: $muted;
+    margin: 0 0 7px;
+  }
+}
+
+.project__points {
+  margin: 0;
+  padding-left: 17px;
+  font-size: 0.87rem;
+  line-height: 1.64;
+  color: $text-soft;
+
+  li { margin-bottom: 7px; }
+  li:last-child { margin-bottom: 0; }
+  li::marker { color: $border-strong; }
+  strong { color: $text; }
+}
+
+.project__prose {
+  margin: 0;
+  font-size: 0.87rem;
+  line-height: 1.64;
+  color: $text-soft;
+}
+
+.project--compact {
+  padding: 15px 0;
+
+  .project__name { font-size: 0.94rem; display: inline; }
+  .project__tagline { display: inline; margin: 0; }
+}
+
+.project__inline-sep { color: $border-strong; margin: 0 6px; }
+
+/* Experience and leadership
+   -------------------------------------------------------------------------- */
+.subhead {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $muted;
+  margin: 22px 0 2px;
+}
+
+.role {
+  padding: 15px 0;
+  border-bottom: 1px solid $border;
+
+  &:last-child { border-bottom: 0; }
+}
+
+.role__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.role__title {
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: $text;
+  margin: 0;
+  flex: 1 1 300px;
+}
+
+.role__org {
+  font-weight: 400;
+  color: $text-soft;
+}
+
+.role__kind {
+  margin: 3px 0 0;
+  font-size: 0.78rem;
+  color: $muted;
+}
+
+.role__points {
+  margin: 8px 0 0;
+  padding-left: 17px;
+  font-size: 0.86rem;
+  line-height: 1.62;
+  color: $text-soft;
+
+  li { margin-bottom: 5px; }
+  li:last-child { margin-bottom: 0; }
+  li::marker { color: $border-strong; }
+}
+
+/* Awards
+   -------------------------------------------------------------------------- */
+.awards {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.award {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid $border;
+  font-size: 0.89rem;
+  line-height: 1.55;
+
+  &:last-child { border-bottom: 0; }
+}
+
+.award__year {
+  flex: 0 0 42px;
+  font-size: 0.78rem;
+  color: $muted;
+  font-variant-numeric: tabular-nums;
+}
+
+.award__title { font-weight: 600; color: $text; }
+.award__org { color: $text-soft; }
+.award__note {
+  display: block;
+  font-size: 0.79rem;
+  color: $muted;
+  margin-top: 2px;
+}
+
+/* Education and contact
+   -------------------------------------------------------------------------- */
+.education {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.education li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 9px 0;
+  border-bottom: 1px solid $border;
+  font-size: 0.89rem;
+
+  &:last-child { border-bottom: 0; }
+}
+
+.education strong { color: $text; }
+.education span { color: $text-soft; }
+
+.contact {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: $text-soft;
+
+  p { margin: 0 0 8px; }
+  p:last-child { margin-bottom: 0; }
+}
+
+/* Case study pages
+   -------------------------------------------------------------------------- */
+.case {
+  max-width: 720px;
+  font-size: 0.93rem;
+  line-height: 1.72;
+  color: $text-soft;
+
+  h1 {
+    font-family: $serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    color: $text;
+    margin: 6px 0 0;
+  }
+
+  h2 {
+    font-family: $serif;
+    font-size: 1.16rem;
+    font-weight: 600;
+    color: $text;
+    margin: 38px 0 10px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid $border;
+  }
+
+  p { margin: 0 0 13px; }
+  strong { color: $text; }
+
+  ul, ol { margin: 0 0 14px; padding-left: 19px; }
+  ul { list-style: disc; }
+  ol { list-style: decimal; }
+  li { margin-bottom: 6px; }
+  li::marker { color: $muted; }
+
+  ul.evidence { list-style: none; padding-left: 0; margin-top: 14px; }
+
+  pre {
+    margin: 0 0 14px;
+    padding: 14px 16px;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius;
+    overflow-x: auto;
+    font-family: $mono;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: $text;
+
+    code { background: none; border: 0; padding: 0; font-size: inherit; }
+  }
+}
+
+.case__back {
+  font-size: 0.8rem;
+  a { color: $muted; border-bottom-color: $border-strong; }
+  a:hover { color: $accent; }
+}
+
+.case__summary {
+  margin-top: 10px !important;
+  font-size: 1rem;
+  color: $text-soft;
+}
+
+.case__figure {
+  margin: 22px 0 6px;
+
+  img {
+    display: block;
+    width: 100%;
+    border: 1px solid $border;
+    border-radius: $radius;
+  }
+
+  figcaption {
+    margin-top: 7px;
+    font-size: 0.76rem;
+    color: $muted;
+  }
+}
+
+.case__table {
+  overflow-x: auto;
+  margin: 0 0 14px;
+
+  table {
+    width: 100%;
+    min-width: 600px;
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 8px 10px;
+    border-bottom: 1px solid $border;
+  }
+
+  th {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $muted;
+    background: $surface;
+  }
+
+  td:first-child { font-weight: 600; color: $text; white-space: nowrap; }
+}
+
+/* Bulleted lists inside entries (the reset removes list-style globally) */
+.entry__findings,
+.project__points,
+.role__points { list-style: disc; }
+
+/* Category colour helper
+   -------------------------------------------------------------------------- */
+@mixin kind($fg, $bg) {
+  --kind: #{$fg};
+  --kind-bg: #{$bg};
+}
+.tl--review       { @include kind($kind-review, $kind-review-bg); }
+.tl--engineering  { @include kind($kind-engineering, $kind-engineering-bg); }
+.tl--accepted     { @include kind($kind-accepted, $kind-accepted-bg); }
+.tl--selection    { @include kind($kind-selection, $kind-selection-bg); }
+.tl--presentation { @include kind($kind-presentation, $kind-presentation-bg); }
+.tl--position     { @include kind($kind-position, $kind-position-bg); }
+.tl--course       { @include kind($kind-course, $kind-course-bg); }
+
+/* Timeline
+   -------------------------------------------------------------------------- */
+.timeline {
+  position: relative;
+  margin: 20px 0 0;
+  padding: 0 0 0 28px;
+  list-style: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: $border;
+  }
+}
+
+.tl {
+  position: relative;
+  margin-bottom: 16px;
+
+  &:last-child { margin-bottom: 0; }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--kind);
+    border: 2px solid $bg;
+    box-shadow: 0 0 0 2px var(--kind);
+  }
+}
+
+.tl__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tl__date {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: $muted;
+  font-variant-numeric: tabular-nums;
+}
+
+.tl__tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--kind);
+  background: var(--kind-bg);
+  border-radius: 2px;
+  padding: 1px 7px;
+}
+
+.tl__text {
+  margin: 3px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: $text-soft;
+
+  strong { color: $text; }
+}
+
+/* Education
+   -------------------------------------------------------------------------- */
+.school { padding-top: 15px; }
+
+.school__note {
+  margin: 4px 0 0;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: $muted;
+}
+
+/* Research: findings label and earlier work
+   -------------------------------------------------------------------------- */
+.entry__subhead {
+  margin: 14px 0 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.entry__subhead + .entry__findings { margin-top: 7px; }
+
+.earlier {
+  margin-top: 6px;
+  padding-top: 4px;
+  border-top: 1px solid $border;
+}
+
+.earlier__item {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: $text-soft;
+}
+
+.earlier__context { color: $muted; }
+
+.earlier__doi {
+  font-size: 0.76rem;
+  color: $muted;
+  border-bottom-color: transparent;
+
+  &:hover { color: $accent; border-bottom-color: rgba($accent, 0.3); }
+}
+
+.project__detail {
+  margin: 6px 0 0;
+  font-size: 0.86rem;
+  line-height: 1.62;
+  color: $text-soft;
+}
+
+.award__title a { color: $text; border-bottom-color: $border-strong; }
+.award__title a:hover { color: $accent; }
+
+.school__label { font-weight: 600; color: $text-soft; }
+
+/* Technical skills
+   -------------------------------------------------------------------------- */
+.skills { margin: 14px 0 0; }
+
+.skill {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  column-gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid $border;
+
+  &:last-child { border-bottom: 0; }
+}
+
+.skill__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: $text;
+  padding-top: 1px;
+}
+
+.skill__items {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: $text-soft;
+}
+
+.skill__from {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.74rem;
+  color: $muted;
+}
+
+@media (max-width: $bp-sm) {
+  .skill { grid-template-columns: 1fr; row-gap: 2px; }
+}

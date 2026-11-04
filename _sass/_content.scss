@@ -1,0 +1,165 @@
+/* Shared content typography
+   ========================================================================== */
+
+.section {
+  margin-bottom: 52px;
+  scroll-margin-top: $masthead-h + 18px;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.section__title {
+  font-family: $serif;
+  font-size: 1.22rem;
+  font-weight: 600;
+  letter-spacing: -0.008em;
+  color: $text;
+  margin: 0 0 4px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid $border;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.section__aside {
+  font-family: $sans;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: $muted;
+  letter-spacing: 0.01em;
+
+  a { color: $muted; border-bottom-color: $border-strong; }
+  a:hover { color: $accent; }
+}
+
+.section > p,
+.section > ul,
+.section > ol { margin-top: 16px; }
+
+.prose {
+  font-size: 0.94rem;
+  line-height: 1.72;
+  color: $text-soft;
+
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+}
+
+.lede {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: $text-soft;
+
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+  strong { color: $text; }
+}
+
+/* Inline link row under the about section */
+.quicklinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.quicklink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $accent;
+  background: $accent-tint;
+  border: 1px solid rgba($accent, 0.16);
+  border-radius: $radius;
+  padding: 4px 11px;
+
+  &:hover {
+    background: rgba($accent, 0.1);
+    border-color: rgba($accent, 0.3);
+    color: $accent-hover;
+  }
+}
+
+/* Small meta label, e.g. dates on the right of an entry */
+.meta {
+  font-size: 0.78rem;
+  color: $muted;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Status pill used on research entries */
+.status {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 2px;
+  border: 1px solid;
+  white-space: nowrap;
+
+  &--review   { color: $kind-review; background: $kind-review-bg; border-color: rgba($kind-review, 0.25); }
+  &--accepted { color: #7a4a10; background: $kind-accepted-bg; border-color: #ecd9bc; }
+  &--presented{ color: #1f4d33; background: #eef6f1; border-color: #c9e0d3; }
+  &--project  { color: $accent; background: $accent-tint; border-color: rgba($accent, 0.2); }
+}
+
+/* Tag chips for stacks and topics */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: $text-soft;
+  background: $surface-sunk;
+  border: 1px solid $border;
+  border-radius: 2px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+/* Evidence links: [Code] [Paper] [Notes] */
+.evidence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 13px 0 0;
+  padding: 0;
+}
+
+.evidence a {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: $accent;
+  border: 1px solid rgba($accent, 0.22);
+  border-radius: $radius;
+  padding: 2px 9px;
+
+  &:hover { background: $accent-tint; border-color: rgba($accent, 0.4); }
+  &::before { content: "["; opacity: 0.5; }
+  &::after  { content: "]"; opacity: 0.5; }
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: $muted;
+  font-style: italic;
+}

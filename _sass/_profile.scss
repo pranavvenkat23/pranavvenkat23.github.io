@@ -1,0 +1,81 @@
+/* Sidebar profile (becomes a compact header on narrow screens)
+   ========================================================================== */
+
+.profile {
+  position: sticky;
+  top: $masthead-h;
+  padding: 52px 0 40px;
+}
+
+.profile__avatar {
+  display: block;
+  width: 164px;
+  height: auto;
+  aspect-ratio: 540 / 616;
+  object-fit: cover;
+  border-radius: $radius-lg;
+  border: 1px solid $border;
+  background: $surface;
+}
+
+.profile__identity { margin-top: 18px; }
+
+.profile__name {
+  font-family: $serif;
+  font-size: 1.44rem;
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: -0.012em;
+  color: $text;
+  margin: 0;
+}
+
+.profile__affiliation {
+  margin: 8px 0 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: $text-soft;
+}
+
+.profile__tagline {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: $muted;
+}
+
+.profile__links {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.82rem;
+    color: $text-soft;
+    min-width: 0;
+  }
+
+  a {
+    border-bottom: 1px solid transparent;
+    color: $text-soft;
+    overflow-wrap: anywhere;
+
+    &:hover { color: $accent; border-bottom-color: rgba($accent, 0.3); }
+  }
+
+  .icon {
+    flex: 0 0 15px;
+    width: 15px;
+    height: 15px;
+    color: $muted;
+  }
+}
+
+.profile__location { color: $muted; }

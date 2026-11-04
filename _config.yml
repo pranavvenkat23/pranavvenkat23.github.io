@@ -1,0 +1,75 @@
+# Site configuration for https://pranavvenkat23.github.io/
+# Built on AcadHomepage (https://github.com/RayeRen/acad-homepage.github.io, MIT).
+# Restart `bundle exec jekyll serve` after editing this file.
+
+# Site
+title                    : "Pranav Venkateswaran"
+description              : "Pranav Venkateswaran is a junior at Thomas Jefferson High School for Science and Technology working on vision-language model evaluation, explainable AI for computational biology, and offline-first software systems."
+url                      : "https://pranavvenkat23.github.io"
+baseurl                  : ""
+repository               : "pranavvenkat23/pranavvenkat23.github.io"
+lang                     : "en-US"
+og_image                 : "/images/og-card.png"
+theme                    : null  # disable the GitHub Pages default theme (Primer); this site ships its own
+
+# SEO (kept from the previous site so Search Console ownership stays verified)
+google_site_verification : "lTawnjiX0HaZrc_lf93asuLUfVrWoCqwDWf-bOcoZ1A"
+
+# Author profile (sidebar)
+author:
+  name           : "Pranav Venkateswaran"
+  avatar         : "/images/pranav-venkateswaran.jpg"
+  avatar_alt     : "Portrait of Pranav Venkateswaran"
+  affiliation    : "Thomas Jefferson High School for Science and Technology"
+  affiliation_short: "TJHSST · Class of 2028"
+  tagline        : "ML research and software engineering: model evaluation, computational biology, offline-first systems."
+  location       : "Northern Virginia, USA"
+  email          : "pranav.venkat23@gmail.com"
+  school_email   : "2028pvenkate@tjhsst.edu"
+  github         : "pranavvenkat23"
+  linkedin       : "pranav-venkateswaran-0b4580385"
+  orcid          : "0009-0001-8393-9966"
+  resume         : "/files/Pranav_Venkateswaran_Resume.pdf"
+
+# Reading files
+include:
+  - _pages
+  - files
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - node_modules
+  - scripts
+
+encoding: "utf-8"
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+permalink: /:categories/:title/
+timezone: America/New_York
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from

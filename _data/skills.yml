@@ -1,0 +1,29 @@
+# Technical skills. `from` is the optional "Used in" line.
+- label: "Languages"
+  items: "Python, TypeScript, JavaScript, Java, C#, SQL, HTML/CSS, R, MATLAB"
+
+- label: "Web & backend"
+  items: "Node.js, Express, REST APIs, OAuth 2.0 and session authentication, role-based access control, relational schema design, SQL joins and transactions, async/await orchestration, SQL injection / XSS / CSRF prevention, deployment"
+  from: "Web Application Development coursework"
+
+- label: "Mobile & systems"
+  items: "React, React Native, Expo, SQLite (SQLCipher), Firebase Auth and Firestore security rules, Zustand, offline-first sync"
+  from: "Emercity, Finance Digest"
+
+- label: "ML & evaluation"
+  items: "PyTorch, MLX, NumPy, pandas, SciPy, Matplotlib; calibrated scoring, held-out evaluation, ablations, pre-registered analysis"
+  from: "vision-language model study, D-Select"
+
+- label: "Bioinformatics"
+  items: "AlphaFold, AutoDock Vina, ChimeraX, CAMPR4, BLAST, RNA-seq differential expression, DAVID/KEGG enrichment"
+  from: "NASA GL4HS, GMU CIDR"
+
+- label: "Testing & tools"
+  items: "Jest, Firebase emulator tests, Git and GitHub, Unity"
+
+- label: "Laboratory"
+  items: "Micropipetting, serial dilutions, Bradford protein assay with standard curves, spectrophotometry, agarose gel electrophoresis, bacterial streak plating"
+  from: "DNA Science 1"
+
+- label: "Certifications"
+  items: "AHA BLS Provider; MIT Beaver Works Summer Institute, Version Control: Git & GitHub"

@@ -1,0 +1,51 @@
+# Timeline, newest first. Rendered directly under About.
+# kind sets the dot and tag colour: review / engineering / accepted / selection / presentation / position / course
+- date: "2026.11"
+  kind: "review"
+  tag: "Under review"
+  text: 'Submitted <a href="#research-vlm"><strong>Shape, Seam, or Sense?</strong></a>, an independent study of which visual cues vision-language models use, to an <strong>AAAI-27</strong> workshop (name withheld for double-blind review).'
+
+- date: "2026.10"
+  kind: "engineering"
+  tag: "Engineering"
+  text: 'Built <a href="#project-emercity"><strong>Emercity</strong></a>, an offline-first household emergency app (React Native, SQLCipher, Firestore) for the Congressional App Challenge; 462 passing unit tests, public code on GitHub.'
+
+- date: "2026.09"
+  kind: "accepted"
+  tag: "Accepted"
+  text: 'Abstract accepted to the <strong>ASGSR 2026 Annual Meeting</strong> (American Society for Gravitational and Space Research): <a href="#research-genelab">&ldquo;Explainable AI and Symbolic Regression Identify Genetic Targets for Restoring Perturbed Arabidopsis Root Stem Cell Development Under Microgravity.&rdquo;</a>'
+
+- date: "2026.08"
+  kind: "presentation"
+  tag: "Presentation"
+  text: 'Presented the ArabidOMICS capstone at the <strong>NASA GeneLab for High Schools</strong> Showcase as team lead.'
+
+- date: "2026.08"
+  kind: "course"
+  tag: "Coursework"
+  text: 'Began <strong>Web Application Development</strong> at TJHSST (ongoing, Web App Dev AV): full-stack Node.js and Express services with OAuth 2.0 and session authentication, role-based access control, transactional SQL schemas, and defenses against SQL injection, XSS, and CSRF.'
+
+- date: "2026.08"
+  kind: "course"
+  tag: "Coursework"
+  text: 'Began <strong>DNA Science 1</strong> at TJHSST (ongoing), a lab-based molecular biology course centered on collecting, analyzing, and writing up experimental data: Bradford protein assays with spectrophotometric quantification, restriction digests with agarose gel electrophoresis, and aseptic bacterial culture on selective media.'
+
+- date: "2026.07"
+  kind: "selection"
+  tag: "Selected"
+  text: 'Selected for the <strong>NASA GL4HS Capstone Program</strong> (capped at 45 teams nationally); led team ArabidOMICS in developing a research proposal from Arabidopsis spaceflight RNA-seq.'
+
+- date: "2026.06"
+  kind: "position"
+  tag: "Program"
+  text: 'Began <strong>NASA GeneLab for High Schools</strong> at NASA Ames Research Center: training in spaceflight omics and bioinformatics.'
+
+- date: "2025.06"
+  kind: "position"
+  tag: "Research"
+  text: 'Research internship at the <strong>George Mason University Center for Infectious Disease Research</strong> under Dr. Chris Lockhart; presented in August 2025.'
+
+- date: "2025.02"
+  kind: "course"
+  tag: "Certificate"
+  text: 'Completed the <a href="https://bwsix.edly.io/certificates/3f87e04c22984b66b1aa016f78df40b5"><strong>MIT Beaver Works Summer Institute</strong> course in Version Control: Git &amp; GitHub</a>, then used that workflow on the team codebase of <a href="#project-biggies">Biggie&#39;s Adventure</a>.'

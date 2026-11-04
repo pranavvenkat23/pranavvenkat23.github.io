@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    {% include masthead.html %}
+
+    <div class="layout">
+      {% include profile.html %}
+
+      <main id="main" class="content">
+        {{ content }}
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Last updated {{ site.time | date: '%B %Y' }}.</p>
+        <p class="site-footer__colophon">
+          Built with <a href="https://jekyllrb.com/">Jekyll</a>, based on
+          <a href="https://github.com/RayeRen/acad-homepage.github.io">AcadHomepage</a> (MIT).
+        </p>
+      </div>
+    </footer>
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  </body>
+</html>

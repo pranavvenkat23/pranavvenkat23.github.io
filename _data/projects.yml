@@ -1,0 +1,105 @@
+# Selected engineering projects. `featured: true` renders the expanded layout.
+- id: "project-emercity"
+  featured: true
+  name: "Emercity"
+  tagline: "An offline-first household emergency app that ranks who needs help first, for each hazard, with no signal."
+  period: "2026"
+  role: "Designer and lead developer"
+  image: "/images/projects/emercity-screens.png"
+  image_alt: "Three Emercity screens: the household home view, the per-hazard priority order, and active Emergency Mode"
+  what: >
+    Emercity tells a household what to do first in a power outage, winter storm, flood, fire,
+    chemical spill, or hurricane, ranked by who in that specific home is most at risk,
+    at that address, right now. Built for the Congressional App Challenge and designed to work
+    with no network connection.
+  built:
+    - "<strong>Deterministic safety logic.</strong> The priority engine, countdowns, and emergency playbooks are pure rule-based functions with injectable clocks, kept in a separate domain layer. No generative model participates in any emergency decision, so every ranking can be explained to the user and tested against a fixture."
+    - "<strong>Local-first persistence.</strong> Every write lands in an encrypted SQLite database (SQLCipher, key in the device keychain) before anything touches the network, so the UI never waits on a request and the app is fully usable offline."
+    - "<strong>Transactional sync queue.</strong> For shared households, each write also appends to a <code>sync_queue</code> table in the same database transaction; the queue drains to Firestore when connectivity returns, so edits made offline are not lost. Household members' phones subscribe to each other's changes, including step check-offs during an active emergency."
+    - "<strong>Access control.</strong> Firestore security rules restrict each household's data to its members by role, and are exercised against the Firebase emulator in their own test suite."
+    - "<strong>Sourced safety data.</strong> Medication and food safe-time countdowns come only from cited sources (FDA, product labels, USDA) or the user's own stated estimate, and the UI says which. Where no sourced rule exists, it says &ldquo;no safe-time data&rdquo; rather than guessing."
+  rigor: >
+    462 unit tests across 35 suites pass on the current revision, covering the priority engine
+    against 46 fixture households, countdown arithmetic, and the sync queue. The Firestore
+    security rules have a separate suite that runs against the Firebase emulator. TypeScript
+    runs in strict mode. A written progress document tracks every
+    screen as built-and-verified, built-with-a-stated-gap, or blocked, so known limitations are
+    recorded rather than hidden.
+  stack: ["React Native", "Expo", "TypeScript (strict)", "SQLCipher", "Firebase Auth & Firestore", "Zustand", "MapLibre", "Jest"]
+  limits: "The emergency rules have not been reviewed by a qualified professional, and the app says so on its About screen. Push notifications to closed phones and server-side grounded answers are out of reach on Firebase's free tier, and the app states that rather than appearing to support them."
+  links:
+    - label: "Code"
+      url: "https://github.com/pranavvenkat23/emercity"
+    - label: "Architecture notes"
+      url: "/projects/emercity/"
+
+- id: "project-finance-digest"
+  featured: true
+  name: "Finance Digest"
+  tagline: "A civic-finance app that itemises your federal income tax across the real federal budget, then maps the federal money flowing back into your ZIP code."
+  period: "2026"
+  role: "Sole developer"
+  what: >
+    Enter an income, filing status, and ZIP code, and Finance Digest produces a personal federal
+    tax receipt, a map of federal awards near you, and a what-if simulator for reallocating the
+    budget. Submitted to the Congressional App Challenge. Every dollar figure traces to an
+    official federal source.
+  built:
+    - "<strong>A single allocation engine.</strong> The tax receipt and the what-if simulator call the same pure module; there is no second implementation that could drift. Federal income tax is computed from IRS brackets and the standard deduction, then split across budget functions in proportion to real Treasury outlays, so line items sum exactly to the computed tax."
+    - "<strong>Invariant-preserving simulation.</strong> Reallocating money between budget categories conserves the total exactly, so the simulator cannot silently create or destroy dollars, which is the property the unit tests assert."
+    - "<strong>A verified data snapshot.</strong> A refresh script pulls Monthly Treasury Statement Table 9 from the Treasury API, checks that the budget functions sum to the published total, and commits the result. The tax views then run entirely offline from that committed snapshot."
+    - "<strong>Cached spatial queries.</strong> USAspending.gov award lookups are cached per ZIP code with a 7-day TTL in AsyncStorage, with committed sample data as a fallback so a fresh clone runs with no network or keys."
+  rigor: >
+    Unit tests cover bracket arithmetic, the allocation proportions, and the reallocation
+    invariant; the project type-checks under strict TypeScript. Generated explanatory text is
+    labelled educational and never produces a sourced dollar figure; those come only from
+    the Treasury snapshot and the tax engine.
+  stack: ["React Native", "Expo Router", "TypeScript (strict)", "Zustand", "Jest", "Treasury Fiscal Data API", "USAspending.gov", "Census ZCTA"]
+  links:
+    - label: "Code"
+      url: "https://github.com/pranavvenkat23/Finance-Digest"
+
+- id: "project-puzzlebench"
+  featured: false
+  name: "Jigsaw cue benchmark"
+  tagline: "The evaluation harness behind the vision-language model study: puzzle generation, a shape oracle, a classical seam solver, and multi-model runners."
+  period: "2026"
+  role: "Sole developer"
+  what: >
+    Python package that cuts an image into interlocking pieces where each hole matches its
+    neighbour's tab, renders nine cue conditions per item, builds four question types, and runs
+    them against local and API vision-language models with per-option probabilities recorded.
+  built:
+    - "A shape oracle that proves each generated puzzle has exactly one valid solution, counting near-identical knobs as interchangeable above an IoU threshold, so an unsolvable or ambiguous item never reaches a model."
+    - "A classical seam solver that measures how much the image content alone carries, giving a non-AI baseline for every condition."
+    - "Model runners with hard spend caps enforced in code against a global ledger, plus an independent audit script that re-derives the reported numbers from raw records without reusing the analysis code."
+  stack: ["Python", "MLX", "NumPy", "SciPy", "pandas", "Pillow", "Matplotlib"]
+  links:
+    - label: "Research entry"
+      url: "#research-vlm"
+
+- id: "project-biggies"
+  featured: false
+  name: "Biggie's Adventure"
+  tagline: "A 2D puzzle-platformer for two players in local multiplayer, built as our team's TSA national Video Game Design submission."
+  period: "2025"
+  role: "Co-developer, TSA team"
+  detail: "Multiple levels in pursuit of Biggie's brother, Teddy. Written in C# on Unity, shipped as a playable browser (HTML5) build, and built by hand with no generative AI. The team shared one codebase through Git and GitHub, the version-control workflow I was learning at the same time in an MIT Beaver Works Summer Institute course on version control. Development finished in summer 2025."
+  stack: ["C#", "Unity", "Git & GitHub", "HTML5 / WebGL"]
+  links:
+    - label: "Play: final release"
+      url: "https://revajithebest.itch.io/biggies-adventure"
+    - label: "Play: my upload"
+      url: "https://venkatpranav.itch.io/biggies-adventure"
+  note: "The final release is published on a teammate's itch.io page; my page hosts an earlier build of the same game."
+
+- id: "project-pywordle"
+  featured: false
+  name: "pyWordle"
+  tagline: "A terminal word game written for the AP CSP Create Task, with input validation and per-letter state tracking across guesses."
+  period: "2025"
+  role: "Sole developer"
+  stack: ["Python"]
+  links:
+    - label: "Code"
+      url: "https://github.com/pranavvenkat23/pyWordle"

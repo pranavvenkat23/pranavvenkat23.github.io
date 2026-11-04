@@ -1,0 +1,25 @@
+# Research interests. Each `work` item links to an entry on this page.
+- title: "Trustworthy Multimodal AI & Evaluation"
+  summary: "Diagnosing which evidence vision-language models actually use when they appear to reason. I build controlled benchmarks that remove one visual cue at a time inside the same image, then check whether a reported effect survives shortcut baselines, content-matched distractors, answer-preference bias, and prompt-format sensitivity before interpreting it."
+  topics: ["Vision-language models", "Cue ablation", "Shortcut baselines", "Calibrated scoring", "Pre-registered analysis", "Biomedical imaging"]
+  work:
+    - label: "Shape, Seam, or Sense? (AAAI-27 workshop, under review)"
+      url: "#research-vlm"
+
+- title: "Computational Biology & Biomedical ML"
+  summary: "Models that pick out a rare biological signal from a noisy background and can explain why. Explainable machine learning and symbolic regression to identify genetic targets in spaceflight transcriptomes, and ML-guided peptide design scored on how well candidates separate disease from healthy profiles, tested on held-out data with ablations."
+  topics: ["Explainable AI", "Symbolic regression", "RNA-seq & pathway enrichment", "Ensemble affinity models", "Sequence optimization"]
+  work:
+    - label: "Explainable AI for spaceflight genomics (ASGSR 2026)"
+      url: "#research-genelab"
+    - label: "D-Select"
+      url: "#research-dselect"
+
+- title: "Software Systems & Applied Engineering"
+  summary: "Software whose behavior can be tested and explained: local-first mobile systems with transactional sync, deterministic decision engines, invariant-checked financial arithmetic, and data pipelines that validate public sources before use."
+  topics: ["Offline-first sync", "Deterministic rules engines", "Invariant testing", "Data modeling", "Public data APIs"]
+  work:
+    - label: "Emercity"
+      url: "#project-emercity"
+    - label: "Finance Digest"
+      url: "#project-finance-digest"

@@ -1,0 +1,31 @@
+# Research positions, newest first. `kind` is the subtitle line under each role.
+- role: "Independent Researcher"
+  org: "Self-directed"
+  kind: "Vision-language model evaluation; ML peptide design"
+  period: "2026 - present"
+  points:
+    - "Designed and ran a pre-registered benchmark study of vision-language models, now under review at an AAAI-27 workshop, and co-built D-Select, a peptide-design pipeline for tuberculosis breath diagnostics."
+  links:
+    - label: "VLM study"
+      url: "#research-vlm"
+    - label: "D-Select"
+      url: "#research-dselect"
+
+- role: "Team Lead, ArabidOMICS"
+  org: "NASA GeneLab for High Schools"
+  org_url: "https://www.nasa.gov/ames/genelab-for-high-schools/"
+  kind: "NASA Ames Research Center, virtual · Capstone Program"
+  period: "Jun - Aug 2026"
+  points:
+    - "Completed GL4HS spaceflight-omics training, was selected for the Capstone Program, and led a team analyzing Arabidopsis spaceflight RNA-seq; the team's abstract was accepted to ASGSR 2026."
+  links:
+    - label: "Research entry"
+      url: "#research-genelab"
+
+- role: "Research Intern"
+  org: "George Mason University, Center for Infectious Disease Research"
+  kind: "Summer research internship · Manassas, VA · Mentor: Dr. Chris Lockhart"
+  period: "Jun - Aug 2025"
+  points:
+    - "Designed antimicrobial peptide variants and evaluated them with AlphaFold structure prediction and AutoDock Vina docking; presented in August 2025."
+  links: []
