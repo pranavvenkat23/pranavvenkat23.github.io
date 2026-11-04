@@ -19,6 +19,7 @@ $border-strong : #cdd2db;
 $accent        : #22356a;
 $accent-hover  : #16244a;
 $accent-tint   : #eef1f7;
+$rule          : mix($accent, $bg, 30%);   // section heading rule
 
 // Geometry
 $radius      : 3px;

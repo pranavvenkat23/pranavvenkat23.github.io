@@ -8,25 +8,21 @@
   image: "/images/projects/emercity-screens.png"
   image_alt: "Three Emercity screens: the household home view, the per-hazard priority order, and active Emergency Mode"
   what: >
-    Emercity tells a household what to do first in a power outage, winter storm, flood, fire,
-    chemical spill, or hurricane, ranked by who in that specific home is most at risk,
-    at that address, right now. Built for the Congressional App Challenge and designed to work
-    with no network connection.
+    Tells a household what to do first in a power outage, winter storm, flood, fire, chemical
+    spill, or hurricane, ranked by who in that specific home is most at risk. Built for the
+    Congressional App Challenge.
   built:
-    - "<strong>Deterministic safety logic.</strong> The priority engine, countdowns, and emergency playbooks are pure rule-based functions with injectable clocks, kept in a separate domain layer. No generative model participates in any emergency decision, so every ranking can be explained to the user and tested against a fixture."
-    - "<strong>Local-first persistence.</strong> Every write lands in an encrypted SQLite database (SQLCipher, key in the device keychain) before anything touches the network, so the UI never waits on a request and the app is fully usable offline."
-    - "<strong>Transactional sync queue.</strong> For shared households, each write also appends to a <code>sync_queue</code> table in the same database transaction; the queue drains to Firestore when connectivity returns, so edits made offline are not lost. Household members' phones subscribe to each other's changes, including step check-offs during an active emergency."
-    - "<strong>Access control.</strong> Firestore security rules restrict each household's data to its members by role, and are exercised against the Firebase emulator in their own test suite."
-    - "<strong>Sourced safety data.</strong> Medication and food safe-time countdowns come only from cited sources (FDA, product labels, USDA) or the user's own stated estimate, and the UI says which. Where no sourced rule exists, it says &ldquo;no safe-time data&rdquo; rather than guessing."
+    - "<strong>Deterministic safety logic.</strong> The priority engine, countdowns, and emergency playbooks are pure rule-based functions with injectable clocks. No generative model makes any emergency decision, so every ranking can be explained to the user and tested against fixtures."
+    - "<strong>Local-first persistence.</strong> Every write lands in an encrypted SQLite database (SQLCipher, key in the device keychain) before anything touches the network, so the app is fully usable offline."
+    - "<strong>Transactional sync queue.</strong> Each shared-household write appends to a <code>sync_queue</code> table in the same transaction and drains to Firestore when connectivity returns, so offline edits are never lost and members' phones stay in sync during an emergency."
+    - "<strong>Access control.</strong> Firestore security rules limit each household's data to its members, by role."
+    - "<strong>Sourced safety data.</strong> Medication and food safe-time countdowns come only from cited sources (FDA, USDA, product labels) or the user's own estimate. With no sourced rule, the app says &ldquo;no safe-time data&rdquo; instead of guessing."
   rigor: >
-    462 unit tests across 35 suites pass on the current revision, covering the priority engine
-    against 46 fixture households, countdown arithmetic, and the sync queue. The Firestore
-    security rules have a separate suite that runs against the Firebase emulator. TypeScript
-    runs in strict mode. A written progress document tracks every
-    screen as built-and-verified, built-with-a-stated-gap, or blocked, so known limitations are
-    recorded rather than hidden.
+    462 unit tests across 35 suites, including the priority engine against 46 fixture households,
+    plus a separate Firestore rules suite on the emulator; TypeScript runs in strict mode. A
+    progress log marks every screen as verified, verified with a stated gap, or blocked.
   stack: ["React Native", "Expo", "TypeScript (strict)", "SQLCipher", "Firebase Auth & Firestore", "Zustand", "MapLibre", "Jest"]
-  limits: "The emergency rules have not been reviewed by a qualified professional, and the app says so on its About screen. Push notifications to closed phones and server-side grounded answers are out of reach on Firebase's free tier, and the app states that rather than appearing to support them."
+  limits: "The emergency rules have not yet been reviewed by a qualified professional, and the app says so. Background push alerts need server code beyond Firebase's free tier, and the app states that rather than implying it is monitoring."
   links:
     - label: "Code"
       url: "https://github.com/pranavvenkat23/emercity"
@@ -40,20 +36,18 @@
   period: "2026"
   role: "Sole developer"
   what: >
-    Enter an income, filing status, and ZIP code, and Finance Digest produces a personal federal
-    tax receipt, a map of federal awards near you, and a what-if simulator for reallocating the
-    budget. Submitted to the Congressional App Challenge. Every dollar figure traces to an
-    official federal source.
+    Enter an income, filing status, and ZIP code to get a personal federal tax receipt, a map of
+    federal awards nearby, and a what-if budget simulator. Submitted to the Congressional App
+    Challenge; every dollar figure traces to an official federal source.
   built:
-    - "<strong>A single allocation engine.</strong> The tax receipt and the what-if simulator call the same pure module; there is no second implementation that could drift. Federal income tax is computed from IRS brackets and the standard deduction, then split across budget functions in proportion to real Treasury outlays, so line items sum exactly to the computed tax."
-    - "<strong>Invariant-preserving simulation.</strong> Reallocating money between budget categories conserves the total exactly, so the simulator cannot silently create or destroy dollars, which is the property the unit tests assert."
-    - "<strong>A verified data snapshot.</strong> A refresh script pulls Monthly Treasury Statement Table 9 from the Treasury API, checks that the budget functions sum to the published total, and commits the result. The tax views then run entirely offline from that committed snapshot."
-    - "<strong>Cached spatial queries.</strong> USAspending.gov award lookups are cached per ZIP code with a 7-day TTL in AsyncStorage, with committed sample data as a fallback so a fresh clone runs with no network or keys."
+    - "<strong>One allocation engine.</strong> The tax receipt and the simulator call the same pure module. Federal income tax is computed from IRS brackets and the standard deduction, then split across budget functions in proportion to real Treasury outlays, so line items sum exactly to the computed tax."
+    - "<strong>Invariant-preserving simulation.</strong> Moving money between budget categories conserves the total exactly, so the simulator cannot create or destroy dollars; the unit tests assert this."
+    - "<strong>Verified data snapshot.</strong> A refresh script pulls Monthly Treasury Statement Table 9, checks that the budget functions sum to the published total, and commits the result, so the tax views run fully offline."
+    - "<strong>Cached spatial queries.</strong> USAspending.gov lookups are cached per ZIP code for 7 days, with committed sample data as a fallback so a fresh clone runs without network access or keys."
   rigor: >
-    Unit tests cover bracket arithmetic, the allocation proportions, and the reallocation
-    invariant; the project type-checks under strict TypeScript. Generated explanatory text is
-    labelled educational and never produces a sourced dollar figure; those come only from
-    the Treasury snapshot and the tax engine.
+    Unit tests cover bracket arithmetic, allocation proportions, and the reallocation invariant,
+    under strict TypeScript. Generated explanatory text is labelled educational and never supplies
+    a dollar figure; those come only from the Treasury snapshot and the tax engine.
   stack: ["React Native", "Expo Router", "TypeScript (strict)", "Zustand", "Jest", "Treasury Fiscal Data API", "USAspending.gov", "Census ZCTA"]
   links:
     - label: "Code"
@@ -84,7 +78,7 @@
   tagline: "A 2D puzzle-platformer for two players in local multiplayer, built as our team's TSA national Video Game Design submission."
   period: "2025"
   role: "Co-developer, TSA team"
-  detail: "Multiple levels in pursuit of Biggie's brother, Teddy. Written in C# on Unity, shipped as a playable browser (HTML5) build, and built by hand with no generative AI. The team shared one codebase through Git and GitHub, the version-control workflow I was learning at the same time in an MIT Beaver Works Summer Institute course on version control. Development finished in summer 2025."
+  detail: "Multiple levels in pursuit of Biggie's brother, Teddy. Written in C# on Unity and shipped as a playable browser build. The team shared one codebase through Git and GitHub, a workflow I was learning at the same time in an MIT Beaver Works Summer Institute course. Finished in summer 2025."
   stack: ["C#", "Unity", "Git & GitHub", "HTML5 / WebGL"]
   links:
     - label: "Play: final release"

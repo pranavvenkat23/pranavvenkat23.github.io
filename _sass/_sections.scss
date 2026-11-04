@@ -164,6 +164,7 @@
   img {
     display: block;
     width: 100%;
+    max-width: 560px;
     border: 1px solid $border;
     border-radius: $radius;
     background: $surface;
@@ -576,7 +577,6 @@
 .earlier {
   margin-top: 6px;
   padding-top: 4px;
-  border-top: 1px solid $border;
 }
 
 .earlier__item {

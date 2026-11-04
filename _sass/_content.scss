@@ -2,7 +2,7 @@
    ========================================================================== */
 
 .section {
-  margin-bottom: 52px;
+  margin-bottom: 72px;
   scroll-margin-top: $masthead-h + 18px;
 
   &:last-child { margin-bottom: 0; }
@@ -10,13 +10,13 @@
 
 .section__title {
   font-family: $serif;
-  font-size: 1.22rem;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: -0.008em;
   color: $text;
   margin: 0 0 4px;
-  padding-bottom: 9px;
-  border-bottom: 1px solid $border;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $rule;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
